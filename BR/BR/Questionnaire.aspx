@@ -161,20 +161,17 @@
         });
 
         $(document).on('click', '[id*=btnThirdParty]', function () {
-            alert("#<%= btnThirdParty.ClientID %>")
-            $("#thirdParty").detach();
+            $("#thirdParty").slideUp(1000);
             $("#firstParty").slideDown(1000);
         });
 
         $(document).on('click', '[id*=btnFirstParty]', function () {
-            alert("#<%= btnFirstParty.ClientID %>")
-            $("#firstParty").detach();
+            $("#firstParty").slideUp(1000);
             $("#crimes").slideDown(1000);
         });
 
         $(document).on('click', '[id*=btnCrime]', function () {
-            alert("#<%= btnCrime.ClientID %>")
-            $("#crimes").detach();
+            $("#crimes").slideUp(1000);
             $("#otherCoverage").slideDown(1000);
         });
 
@@ -291,19 +288,6 @@
         <div class="Estimate_area overlay" id="thirdParty" style="display: flex; width: auto">
             <div class="container">
                 <div class="row">
-                    <%--<div class="col-xl-4 col-lg-4 col-md-5">
-
-                        <div class="Estimate_info">
-                            <h3>Third party claims:</h3>
-                            <p>
-                                Coverages offered:<br />
-                                Privacy breach liability<br />
-                                Network Security liability<br />
-                                Multimedia and intellectual liability<br />
-                            </p>
-
-                        </div>
-                    </div>--%>
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="form">
                             <div class="row">
@@ -433,7 +417,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnThirdParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" />
+                                        <asp:Button ID="btnThirdParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
                                     </div>
                                 </div>
                             </div>
@@ -448,26 +432,6 @@
         <div class="Estimate_area overlay" id="firstParty" style="display: flex; width: auto">
             <div class="container">
                 <div class="row">
-                    <%--<div class="col-xl-4 col-lg-4 col-md-5">
-                        <div class="Estimate_info">
-                            <h3>First party claims:</h3>
-                            <p>
-                                Coverages offered:<br />
-                                Business interruption and Recovery<br />
-                                Period of restoration<br />
-                                Event support expenses<br />
-                                Credit monitoring<br />
-                                Reputational damage<br />
-                                Dependant Network/cloud/Outsourced<br />
-                                Physical Damage computer network<br />
-                                PCI Fines<br />
-                                Notification costs<br />
-                                Regulatory Défense and Penalties<br />
-
-                            </p>
-
-                        </div>
-                    </div>--%>
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="form">
 
@@ -634,7 +598,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnFirstParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static"/>
+                                        <asp:Button ID="btnFirstParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;"/>
                                     </div>
                                 </div>
                             </div>
@@ -649,22 +613,6 @@
         <div class="Estimate_area overlay" id="crimes" style="display: flex; width: auto">
             <div class="container">
                 <div class="row">
-                    <%--<div class="col-xl-4 col-lg-4 col-md-5">
-                        <div class="Estimate_info">
-                            <h3>Crime:</h3>
-                            <p>
-                                Coverages offered:
-                                Network Extortion<br />
-                                Electronic theft<br />
-                                Computer Fraud<br />
-                                Telecommunication Fraud<br />
-                                Telephone Hacking<br />
-                                Social Engineering Fraud ($250,000)<br />
-                                Customer Monies Held in accounts controlled by you<br />
-                            </p>
-
-                        </div>
-                    </div>--%>
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="form">
 
@@ -767,7 +715,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnCrime" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static"/>
+                                        <asp:Button ID="btnCrime" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;"/>
                                     </div>
                                 </div>
                             </div>
@@ -782,19 +730,6 @@
         <div class="Estimate_area overlay" id="otherCoverage" style="display: flex; width: auto">
             <div class="container">
                 <div class="row">
-                    <%--<div class="col-xl-4 col-lg-4 col-md-5">
-                        <div class="Estimate_info">
-                            <h3>Other coverages:</h3>
-                            <p>
-                                Coverages offered:<br />
-                                Physical Documents Breaches of Privacy<br />
-                                Rogue Employee Included<br />
-                                Territorial Limits<br />
-                                Mobile Devices<br />
-                            </p>
-
-                        </div>
-                    </div>--%>
                     <div class="col-xl-12 col-lg-12 col-md-12">
                         <div class="form">
                             <div class="row">

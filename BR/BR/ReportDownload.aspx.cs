@@ -14,47 +14,57 @@ namespace BR
 {
     public partial class ReportDownload : System.Web.UI.Page
     {
+        int userId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            DAL dal = new DAL();
+            if (!IsPostBack)
+            {
+                DAL dal = new DAL();
+                //userId = Convert.ToInt32(Session["userId"]);
+                //industry = Session["industry"].ToString();
+                userId = dal.GetRecentFeedbackUser();
 
-            int userId = Convert.ToInt32(Session["userId"].ToString());
-            string industry = Session["industry"].ToString();
-            //int userId = 59;
-            //string industry = "Manufacturers";
+                /**MOCKING */
+                //int userId = 63;
+                //string industry = "Manufacturers";
+                //Session["Ans1"] = "Yes"; Session["Ans2"] = "No"; Session["Ans3"] = "No";
+                //Session["Ans4"] = "No"; Session["Ans5"] = "No"; Session["Ans6"] = "Yes"; Session["Ans7"] = "Yes"; Session["Ans8"] = "No"; Session["Ans9"] = "No"; Session["Ans10"] = "Yes";
+                //Session["Ans11"] = "Yes"; Session["Ans12"] = "Yes"; Session["Ans13"] = "No"; Session["Ans14"] = "No"; Session["Ans15"] = "No"; Session["Ans16"] = "No"; Session["Ans17"] = "No";
+                //Session["Ans18"] = "No"; Session["Ans19"] = "No"; Session["Ans20"] = "No"; Session["Ans21"] = "No"; Session["Ans22"] = "Yes"; Session["Ans23"] = "No"; Session["Ans24"] = "Yes";
 
-            DataTable dtUserInfo = dal.GetUserInfo(userId);
-            DataTable dtUserQuestions = dal.GetUserQuestions(industry);
-            DataTable dtFeedbackReport = dal.GetFeedbackReport(userId);
+                DataTable dtUserInfo = dal.GetUserInfo(userId);
+                DataTable dtFeedbackReport = dal.GetFeedbackReport(userId);
 
-            createReport(dtUserInfo, dtFeedbackReport);
+                createReport(dtUserInfo, dtFeedbackReport);
+                
+            }
           
-            //SendPdyToCompany(dtFeedbackReport, dtUserInfo);
         }
 
-        private void SendPdfToUser()
-        {
-            MailMessage mail = new MailMessage();
-            SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-            mail.From = new MailAddress("roshandeep810@gmail.com");
-            mail.To.Add("roshandeep1995@gmail.com");
-            mail.Subject = "Bryon Insurance Feedback report PDF";
-            mail.Body = "The feedback Report from Bryson Insurance";
+        //private void SendPdfToUser()
+        //{
+        //    MailMessage mail = new MailMessage();
+        //    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
+        //    mail.From = new MailAddress("roshandeep810@gmail.com");
+        //    mail.To.Add("roshandeep1995@gmail.com");
+        //    mail.Subject = "Bryon Insurance Feedback report PDF";
+        //    mail.Body = "The feedback Report from Bryson Insurance";
 
-            string filename = Session["filename"].ToString().Replace('/', '_');
-            string path = @"C:\Users\rosha\Downloads\";
+        //    string filename = Session["filename"].ToString().Replace('/', '_');
+        //    string path = @"C:\Users\rosha\Downloads\";
 
-            Attachment attachment;
-            attachment = new Attachment(Path.Combine(path, filename), "application/pdf");
-            mail.Attachments.Add(attachment);
+        //    Attachment attachment;
+        //    attachment = new Attachment(Path.Combine(path, filename), "application/pdf");
+        //    mail.Attachments.Add(attachment);
 
-            SmtpServer.Port = 587;
-            SmtpServer.Credentials = new System.Net.NetworkCredential("roshandeep810@gmail.com", "roshandeep2895");
-            SmtpServer.EnableSsl = true;
+        //    SmtpServer.Port = 587;
+        //    SmtpServer.Credentials = new System.Net.NetworkCredential("roshandeep810@gmail.com", "roshandeep2895");
+        //    SmtpServer.EnableSsl = true;
 
-            SmtpServer.Send(mail);
+        //    SmtpServer.Send(mail);
 
-        }
+        //}
 
         public void createReport(DataTable dtUserInfo, DataTable dtFeedbackReport)
         {
@@ -205,230 +215,236 @@ namespace BR
 
         private void AssignSummary(DataTable dtFeedbackReport)
         {
-            if(Session["Ans1"].ToString() == "Yes")
+            if(dtFeedbackReport.Rows[0]["ansText"].ToString() == "Yes")
             {
-                Label1.Text = "A data breach can be catastrophic for an organization as this can result into loss of customer confidence, regulatory penalties and lawsuits. As per a study from IBM Security and Ponemon Institue the average cost of a data breach is $3.86 million ";
+                Label1.Text = "\u25C9" + " " + "A data breach can be catastrophic for an organization as this can result into loss of customer confidence, regulatory penalties and lawsuits. As per a study from IBM Security and Ponemon Institue the average cost of a data breach is $3.86 million ";
+                Label2.Enabled = false;
+                Label3.Enabled = false;
+                Label4.Enabled = false;
+                Label5.Enabled = false;
             }
-            else if (Session["Ans1"].ToString() == "No")
+            else if (dtFeedbackReport.Rows[0]["ansText"].ToString() == "No")
             {
-                Label1.Text = "";
-                Label2.Text = "Outsourcing the security of your organization to an MSSP helps in reducing the costs and gets benefits like  24x7x365 Security Operation Centers (SOCs) for continous monitoring and rapid response on any incidents by intrusions from advanced attack groups. ";
-                Label3.Text = "An anti virus software in your computer systems protects it from spywares, viruses and scans removable devices of any threats before they can harm your computer systems. Also, it can help by protecting it from phishing attacks, blocking Ads and spam websites.";
-                Label4.Text = "Encryption is a process of converting your information or data to an indecipherable code that can only be decrypted by someone possessing the actual encryption key.You can encrypt data not only which transist on the internet but also data which resides on your computer, hard drives or mobile devices.";
-                Label5.Text = "An Incident response plan includes written instructions on how to respond to an incident like data breaches/Denial of service, network intrusions or malware outbreaks.Incident response plan can help in mitigating the cyber incidents faster and minimize the risks to your business. ";
+                Label1.Enabled = false;
+                Label2.Text = "\u25C9" + " " + "Outsourcing the security of your organization to an MSSP helps in reducing the costs and gets benefits like  24x7x365 Security Operation Centers (SOCs) for continous monitoring and rapid response on any incidents by intrusions from advanced attack groups. ";
+                Label3.Text = "\u25C9" + " " + "An anti virus software in your computer systems protects it from spywares, viruses and scans removable devices of any threats before they can harm your computer systems. Also, it can help by protecting it from phishing attacks, blocking Ads and spam websites.";
+                Label4.Text = "\u25C9" + " " + "Encryption is a process of converting your information or data to an indecipherable code that can only be decrypted by someone possessing the actual encryption key.You can encrypt data not only which transist on the internet but also data which resides on your computer, hard drives or mobile devices.";
+                Label5.Text = "\u25C9" + " " + "An Incident response plan includes written instructions on how to respond to an incident like data breaches/Denial of service, network intrusions or malware outbreaks.Incident response plan can help in mitigating the cyber incidents faster and minimize the risks to your business. ";
             }
-            else if(Session["Ans1"].ToString() == "Don't Know")
+            else if(dtFeedbackReport.Rows[0]["ansText"].ToString() == "Don't Know")
             {
-                Label1.Text = "A data breach can be catastrophic for an organization as this can result into loss of customer confidence, regulatory penalties and lawsuits. As per a study from IBM Security and Ponemon Institue the average cost of a data breach is $3.86 million ";
-                Label2.Text = "Outsourcing the security of your organization to an MSSP helps in reducing the costs and gets benefits like  24x7x365 Security Operation Centers (SOCs) for continous monitoring and rapid response on any incidents by intrusions from advanced attack groups. ";
-                Label3.Text = "An anti virus software in your computer systems protects it from spywares, viruses and scans removable devices of any threats before they can harm your computer systems. Also, it can help by protecting it from phishing attacks, blocking Ads and spam websites.";
-                Label4.Text = "Encryption is a process of converting your information or data to an indecipherable code that can only be decrypted by someone possessing the actual encryption key.You can encrypt data not only which transist on the internet but also data which resides on your computer, hard drives or mobile devices.";
-                Label5.Text = "An Incident response plan includes written instructions on how to respond to an incident like data breaches/Denial of service, network intrusions or malware outbreaks.Incident response plan can help in mitigating the cyber incidents faster and minimize the risks to your business.";
-            }
-
-            if (Session["Ans6"].ToString() == "Yes")
-            {
-                Label6.Text = "Intellectual properties are at risk from Cyber squatters who are registering internet domain names of companies and brand names in order to resell them off at a profit. Also, it can be used to lure customers to a fake website and defraud them and obtain their personal details or decieve them in buying goods.";
-            }
-            else if(Session["Ans6"].ToString() == "No")
-            {
-                Label6.Text = "";
-            }
-            else if(Session["Ans6"].ToString() == "Don't Know")
-            {
-                Label6.Text = "Intellectual properties are at risk from Cyber squatters who are registering internet domain names of companies and brand names in order to resell them off at a profit. Also, it can be used to lure customers to a fake website and defraud them and obtain their personal details or decieve them in buying goods.";
+                Label1.Text = "\u25C9" + " " + "A data breach can be catastrophic for an organization as this can result into loss of customer confidence, regulatory penalties and lawsuits. As per a study from IBM Security and Ponemon Institue the average cost of a data breach is $3.86 million ";
+                Label2.Text = "\u25C9" + " " + "Outsourcing the security of your organization to an MSSP helps in reducing the costs and gets benefits like  24x7x365 Security Operation Centers (SOCs) for continous monitoring and rapid response on any incidents by intrusions from advanced attack groups. ";
+                Label3.Text = "\u25C9" + " " + "An anti virus software in your computer systems protects it from spywares, viruses and scans removable devices of any threats before they can harm your computer systems. Also, it can help by protecting it from phishing attacks, blocking Ads and spam websites.";
+                Label4.Text = "\u25C9" + " " + "Encryption is a process of converting your information or data to an indecipherable code that can only be decrypted by someone possessing the actual encryption key.You can encrypt data not only which transist on the internet but also data which resides on your computer, hard drives or mobile devices.";
+                Label5.Text = "\u25C9" + " " + "An Incident response plan includes written instructions on how to respond to an incident like data breaches/Denial of service, network intrusions or malware outbreaks.Incident response plan can help in mitigating the cyber incidents faster and minimize the risks to your business.";
             }
 
-
-            if (Session["Ans7"].ToString() == "Yes")
+            if (dtFeedbackReport.Rows[5]["ansText"].ToString() == "Yes")
             {
-                Label7.Text = "Employees today are heavily reliant on electronic systems and the data it stores to keep the business operations up and running";
+                Label6.Text = "\u25C9" + " " + "Intellectual properties are at risk from Cyber squatters who are registering internet domain names of companies and brand names in order to resell them off at a profit. Also, it can be used to lure customers to a fake website and defraud them and obtain their personal details or decieve them in buying goods.";
             }
-            else if(Session["Ans7"].ToString() == "No")
+            else if(dtFeedbackReport.Rows[5]["ansText"].ToString() == "No")
             {
-                Label7.Text = "";
-                Label8.Text = "BCP and DRP have become really crucial when recovering from cyber incidents. These are strategies that the organizations need to carry on while it recovers from disruptions and data loss, caused by a cyber Incident or disaster like earthquake or a major outage.";
-                Label9.Text = "As a best practice it is recommended to be running weekly integrity checks on your backup databases to ensure they are free of corruption. Data backups allow for minimal business interruption and helps mitigating data loss during a security incident";
+                Label6.Enabled = false;
             }
-            else if(Session["Ans7"].ToString() == "Don't Know")
+            else if(dtFeedbackReport.Rows[5]["ansText"].ToString() == "Don't Know")
             {
-                Label7.Text = "Employees today are heavily reliant on electronic systems and the data it stores to keep the business operations up and running";
-                Label8.Text = "BCP and DRP have become really crucial when recovering from cyber incidents. These are strategies that the organizations need to carry on while it recovers from disruptions and data loss, caused by a cyber Incident or disaster like earthquake or a major outage.";
-                Label9.Text = "As a best practice it is recommended to be running weekly integrity checks on your backup databases to ensure they are free of corruption. Data backups allow for minimal business interruption and helps mitigating data loss during a security incident";
-            }
-
-            if (Session["Ans10"].ToString() == "Yes")
-            {
-                Label10.Text = "Even while the cloud is much more safer place while compared to your physical disks, it is still susceptible to hacking by cybercriminals who can either bypass passwords or guess the security questions to find their way inside.Cloud is not exempt to data loss either, it can happen as a result of human error or databases getting accidentaly deleted. ";
-            }
-            else if(Session["Ans10"].ToString() == "No")
-            {
-                Label10.Text = "One of the most effective ways of dealing with a ransomware attack is to backup your files to a cloud service. Clouds are heavily guarded and has advanced encryption applied to your data to protect it from cybercriminals";
-            }
-            else if(Session["Ans10"].ToString() == "Don't Know")
-            {
-                Label10.Text = "One of the most effective ways of dealing with a ransomware attack is to backup your files to a cloud service. Clouds are heavily guarded and has advanced encryption applied to your data to protect it from cybercriminals";
-            }
-
-            if (Session["Ans11"].ToString() == "Yes")
-            {
-                Label11.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-            else if (Session["Ans11"].ToString() == "No")
-            {
-                Label11.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-            else if (Session["Ans11"].ToString() == "Don't Know")
-            {
-                Label11.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-
-            if (Session["Ans12"].ToString() == "Yes")
-            {
-                Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-            else if (Session["Ans12"].ToString() == "No")
-            {
-                Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-            else if (Session["Ans12"].ToString() == "Don't Know")
-            {
-                Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-
-            if (Session["Ans13"].ToString() == "Yes")
-            {
-                Label13.Text = "";
-            }
-            else if (Session["Ans13"].ToString() == "No")
-            {
-                Label13.Text = "Not changing the default password on critical networking devices will lead to unauthorized device and network access. This makes it easy for attackers to identify and access critical and confidential company information.";
-            }
-            else if (Session["Ans13"].ToString() == "Don't Know")
-            {
-                Label13.Text = "Not changing the default password on critical networking devices will lead to unauthorized device and network access. This makes it easy for attackers to identify and access critical and confidential company information.";
-            }
-
-            if (Session["Ans14"].ToString() == "Yes")
-            {
-                Label14.Text = "";
-            }
-            else if (Session["Ans14"].ToString() == "No")
-            {
-                Label14.Text = "One of the most common ways that hackers break into a computer system or application is by guessing the user passwords. Simple and commonly used passwords allow a hacker to easily gain access and control of the computing device or application";
-            }
-            else if (Session["Ans14"].ToString() == "Don't Know")
-            {
-                Label14.Text = "One of the most common ways that hackers break into a computer system or application is by guessing the user passwords. Simple and commonly used passwords allow a hacker to easily gain access and control of the computing device or application";
-            }
-
-            if (Session["Ans15"].ToString() == "Yes")
-            {
-                Label15.Text = "";
-            }
-            else if (Session["Ans15"].ToString() == "No")
-            {
-                Label15.Text = "Given the large of amount of log data generated by applications, computing and networking devices, it is important that these logs be reviewed daily as they could help to identify malicious attacks within your organization. Having a log management system takes care of this as it incorporates rules that automate the review of logs and identify events that might represent problems or threats";
-            }
-            else if (Session["Ans15"].ToString() == "Don't Know")
-            {
-                Label15.Text = "Given the large of amount of log data generated by applications, computing and networking devices, it is important that these logs be reviewed daily as they could help to identify malicious attacks within your organization. Having a log management system takes care of this as it incorporates rules that automate the review of logs and identify events that might represent problems or threats";
+                Label6.Text = "\u25C9" + " " + "Intellectual properties are at risk from Cyber squatters who are registering internet domain names of companies and brand names in order to resell them off at a profit. Also, it can be used to lure customers to a fake website and defraud them and obtain their personal details or decieve them in buying goods.";
             }
 
 
-            if (Session["Ans16"].ToString() == "Yes")
+            if (dtFeedbackReport.Rows[6]["ansText"].ToString() == "Yes")
             {
-                Label16.Text = "";
+                Label7.Text = "\u25C9" + " " + "Employees today are heavily reliant on electronic systems and the data it stores to keep the business operations up and running";
+                Label8.Enabled = false;
+                Label9.Enabled = false;
             }
-            else if (Session["Ans16"].ToString() == "No")
+            else if(dtFeedbackReport.Rows[6]["ansText"].ToString() == "No")
             {
-                Label16.Text = "Conducting a periodic penetration testing is essential as it not only identifies security vulnerabilities with your organization but can also be used to test the organization's security policy, its adherence to compliance requirements, its employees' security awareness and the organization's ability to identify and respond to security incidents.";
+                Label7.Enabled = false;
+                Label8.Text = "\u25C9" + " " + "BCP and DRP have become really crucial when recovering from cyber incidents. These are strategies that the organizations need to carry on while it recovers from disruptions and data loss, caused by a cyber Incident or disaster like earthquake or a major outage.";
+                Label9.Text = "\u25C9" + " " + "As a best practice it is recommended to be running weekly integrity checks on your backup databases to ensure they are free of corruption. Data backups allow for minimal business interruption and helps mitigating data loss during a security incident";
             }
-            else if (Session["Ans16"].ToString() == "Don't Know")
+            else if(dtFeedbackReport.Rows[6]["ansText"].ToString() == "Don't Know")
             {
-                Label16.Text = "Conducting a periodic penetration testing is essential as it not only identifies security vulnerabilities with your organization but can also be used to test the organization's security policy, its adherence to compliance requirements, its employees' security awareness and the organization's ability to identify and respond to security incidents.";
-            }
-
-            if (Session["Ans17"].ToString() == "Yes")
-            {
-                Label17.Text = "";
-            }
-            else if (Session["Ans17"].ToString() == "No")
-            {
-                Label17.Text = "Ensuring that you have the latest application and operating system updates or patches are important, because they often include critical patches to security vulnerabilities which malware attacks seek to take advantage of. ";
-            }
-            else if (Session["Ans17"].ToString() == "Don't Know")
-            {
-                Label17.Text = "Ensuring that you have the latest application and operating system updates or patches are important, because they often include critical patches to security vulnerabilities which malware attacks seek to take advantage of. ";
+                Label7.Text = "\u25C9" + " " + "Employees today are heavily reliant on electronic systems and the data it stores to keep the business operations up and running";
+                Label8.Text = "\u25C9" + " " + "BCP and DRP have become really crucial when recovering from cyber incidents. These are strategies that the organizations need to carry on while it recovers from disruptions and data loss, caused by a cyber Incident or disaster like earthquake or a major outage.";
+                Label9.Text = "\u25C9" + " " + "As a best practice it is recommended to be running weekly integrity checks on your backup databases to ensure they are free of corruption. Data backups allow for minimal business interruption and helps mitigating data loss during a security incident";
             }
 
-            if (Session["Ans18"].ToString() == "Yes")
+            if (dtFeedbackReport.Rows[9]["ansText"].ToString() == "Yes")
             {
-                Label18.Text = "";
+                Label10.Text = "\u25C9" + " " + "Even while the cloud is much more safer place while compared to your physical disks, it is still susceptible to hacking by cybercriminals who can either bypass passwords or guess the security questions to find their way inside.Cloud is not exempt to data loss either, it can happen as a result of human error or databases getting accidentaly deleted. ";
             }
-            else if (Session["Ans18"].ToString() == "No")
+            else if(dtFeedbackReport.Rows[9]["ansText"].ToString() == "No")
             {
-                Label18.Text = "Not having a security awareness program in place can leads to risky employee behaviours that could potentially result in a breach of the organization’s network by major threats such as web-based attacks, phishing emails, malware, and social engineering scams via the telephone, text messages, or social media channels ";
+                Label10.Text = "\u25C9" + " " + "One of the most effective ways of dealing with a ransomware attack is to backup your files to a cloud service. Clouds are heavily guarded and has advanced encryption applied to your data to protect it from cybercriminals";
             }
-            else if (Session["Ans18"].ToString() == "Don't Know")
+            else if(dtFeedbackReport.Rows[9]["ansText"].ToString() == "Don't Know")
             {
-                Label18.Text = "Not having a security awareness program in place can leads to risky employee behaviours that could potentially result in a breach of the organization’s network by major threats such as web-based attacks, phishing emails, malware, and social engineering scams via the telephone, text messages, or social media channels ";
-            }
-
-            if (Session["Ans19"].ToString() == "Yes")
-            {
-                Label19.Text = "Important paper documents must be stored securely in a locked file cabinet when not in use and must be handled only by authorized staff members to actively used them. Failure to do so can lead to a breach in confidential client or company information";
-            }
-            else if (Session["Ans19"].ToString() == "No")
-            {
-                Label19.Text = "";
-                Label20.Text = "";
-                Label21.Text = "Without a proper file processing system in place, employees will resort to storing client and company information locally on their computing devices. In the event of a compromise, this puts the organization and its client at risk";
-            }
-            else if (Session["Ans19"].ToString() == "Don't Know")
-            {
-                Label19.Text = "Important paper documents must be stored securely in a locked file cabinet when not in use and must be handled only by authorized staff members to actively used them. Failure to do so can lead to a breach in confidential client or company information";
-                Label20.Text = "";
-                Label21.Text = "Without a proper file processing system in place, employees will resort to storing client and company information locally on their computing devices. In the event of a compromise, this puts the organization and its client at risk";
+                Label10.Text = "\u25C9" + " " + "One of the most effective ways of dealing with a ransomware attack is to backup your files to a cloud service. Clouds are heavily guarded and has advanced encryption applied to your data to protect it from cybercriminals";
             }
 
-            if (Session["Ans22"].ToString() == "Yes")
+            if (dtFeedbackReport.Rows[10]["ansText"].ToString() == "Yes")
             {
-                Label22.Text = "";
+                Label11.Text = "\u25C9" + " " + "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
             }
-            else if (Session["Ans22"].ToString() == "Yes")
+            else if (dtFeedbackReport.Rows[10]["ansText"].ToString() == "No")
             {
-                Label22.Text = "Having an access control system in place allows for the identification, authentication and authorization of users and entities by evaluating the users’ login credentials. Without this, unauthorized access can be gained to critical client and or organization information ";
+                Label11.Text = "\u25C9" + " " + "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
             }
-            else if (Session["Ans22"].ToString() == "Don't Know")
+            else if (dtFeedbackReport.Rows[10]["ansText"].ToString() == "Don't Know")
             {
-                Label22.Text = "Having an access control system in place allows for the identification, authentication and authorization of users and entities by evaluating the users’ login credentials. Without this, unauthorized access can be gained to critical client and or organization information ";
-            }
-
-            if (Session["Ans23"].ToString() == "Yes")
-            {
-                Label23.Text = "";
-            }
-            else if (Session["Ans23"].ToString() == "No")
-            {
-                Label23.Text = "User activity monitoring is necessary for data protection and immediately detect and investigate suspicious users. It can also be valuable in finding rogue employees who can help in exfiltrating your data to competitors or engage in corporate espionage";
-            }
-            else if (Session["Ans23"].ToString() == "Don't Know")
-            {
-                Label23.Text = "User activity monitoring is necessary for data protection and immediately detect and investigate suspicious users. It can also be valuable in finding rogue employees who can help in exfiltrating your data to competitors or engage in corporate espionage";
+                Label11.Text = "\u25C9" + " " + "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
             }
 
-            if (Session["Ans24"].ToString() == "Yes")
+            if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "Yes")
             {
-                Label24.Text = "";
+                Label12.Text = "\u25C9" + " " + "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
             }
-            else if (Session["Ans24"].ToString() == "No")
+            else if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "No")
             {
-                Label24.Text = "Your employees are the first line of defence to protect the IT assets which stores valuable company data. Security awareness training serves as an added layer of defence and ensures your employees are aware of the potential cyber threats and how to prevent them.";
+                Label12.Text = "\u25C9" + " " + "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
             }
-            else if (Session["Ans24"].ToString() == "Don't Know")
+            else if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "Don't Know")
             {
-                Label24.Text = "Your employees are the first line of defence to protect the IT assets which stores valuable company data. Security awareness training serves as an added layer of defence and ensures your employees are aware of the potential cyber threats and how to prevent them.";
+                Label12.Text = "\u25C9" + " " + "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
+            }
+
+            if (dtFeedbackReport.Rows[12]["ansText"].ToString() == "Yes")
+            {
+                Label13.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[12]["ansText"].ToString() == "No")
+            {
+                Label13.Text = "\u25C9" + " " + "Not changing the default password on critical networking devices will lead to unauthorized device and network access. This makes it easy for attackers to identify and access critical and confidential company information.";
+            }
+            else if (dtFeedbackReport.Rows[12]["ansText"].ToString() == "Don't Know")
+            {
+                Label13.Text = "\u25C9" + " " + "Not changing the default password on critical networking devices will lead to unauthorized device and network access. This makes it easy for attackers to identify and access critical and confidential company information.";
+            }
+
+            if (dtFeedbackReport.Rows[13]["ansText"].ToString() == "Yes")
+            {
+                Label14.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[13]["ansText"].ToString() == "No")
+            {
+                Label14.Text = "\u25C9" + " " + "One of the most common ways that hackers break into a computer system or application is by guessing the user passwords. Simple and commonly used passwords allow a hacker to easily gain access and control of the computing device or application";
+            }
+            else if (dtFeedbackReport.Rows[13]["ansText"].ToString() == "Don't Know")
+            {
+                Label14.Text = "\u25C9" + " " + "One of the most common ways that hackers break into a computer system or application is by guessing the user passwords. Simple and commonly used passwords allow a hacker to easily gain access and control of the computing device or application";
+            }
+
+            if (dtFeedbackReport.Rows[14]["ansText"].ToString() == "Yes")
+            {
+                Label15.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[14]["ansText"].ToString() == "No")
+            {
+                Label15.Text = "\u25C9" + " " + "Given the large of amount of log data generated by applications, computing and networking devices, it is important that these logs be reviewed daily as they could help to identify malicious attacks within your organization. Having a log management system takes care of this as it incorporates rules that automate the review of logs and identify events that might represent problems or threats";
+            }
+            else if (dtFeedbackReport.Rows[14]["ansText"].ToString() == "Don't Know")
+            {
+                Label15.Text = "\u25C9" + " " + "Given the large of amount of log data generated by applications, computing and networking devices, it is important that these logs be reviewed daily as they could help to identify malicious attacks within your organization. Having a log management system takes care of this as it incorporates rules that automate the review of logs and identify events that might represent problems or threats";
+            }
+
+
+            if (dtFeedbackReport.Rows[15]["ansText"].ToString() == "Yes")
+            {
+                Label16.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[15]["ansText"].ToString() == "No")
+            {
+                Label16.Text = "\u25C9" + " " + "Conducting a periodic penetration testing is essential as it not only identifies security vulnerabilities with your organization but can also be used to test the organization's security policy, its adherence to compliance requirements, its employees' security awareness and the organization's ability to identify and respond to security incidents.";
+            }
+            else if (dtFeedbackReport.Rows[15]["ansText"].ToString() == "Don't Know")
+            {
+                Label16.Text = "\u25C9" + " " + "Conducting a periodic penetration testing is essential as it not only identifies security vulnerabilities with your organization but can also be used to test the organization's security policy, its adherence to compliance requirements, its employees' security awareness and the organization's ability to identify and respond to security incidents.";
+            }
+
+            if (dtFeedbackReport.Rows[16]["ansText"].ToString() == "Yes")
+            {
+                Label17.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[16]["ansText"].ToString() == "No")
+            {
+                Label17.Text = "\u25C9" + " " + "Ensuring that you have the latest application and operating system updates or patches are important, because they often include critical patches to security vulnerabilities which malware attacks seek to take advantage of. ";
+            }
+            else if (dtFeedbackReport.Rows[16]["ansText"].ToString() == "Don't Know")
+            {
+                Label17.Text = "\u25C9" + " " + "Ensuring that you have the latest application and operating system updates or patches are important, because they often include critical patches to security vulnerabilities which malware attacks seek to take advantage of. ";
+            }
+
+            if (dtFeedbackReport.Rows[17]["ansText"].ToString() == "Yes")
+            {
+                Label18.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[17]["ansText"].ToString() == "No")
+            {
+                Label18.Text = "\u25C9" + " " + "Not having a security awareness program in place can leads to risky employee behaviours that could potentially result in a breach of the organization’s network by major threats such as web-based attacks, phishing emails, malware, and social engineering scams via the telephone, text messages, or social media channels ";
+            }
+            else if (dtFeedbackReport.Rows[17]["ansText"].ToString() == "Don't Know")
+            {
+                Label18.Text = "\u25C9" + " " + "Not having a security awareness program in place can leads to risky employee behaviours that could potentially result in a breach of the organization’s network by major threats such as web-based attacks, phishing emails, malware, and social engineering scams via the telephone, text messages, or social media channels ";
+            }
+
+            if (dtFeedbackReport.Rows[18]["ansText"].ToString() == "Yes")
+            {
+                Label19.Text = "\u25C9" + " " + "Important paper documents must be stored securely in a locked file cabinet when not in use and must be handled only by authorized staff members to actively used them. Failure to do so can lead to a breach in confidential client or company information";
+            }
+            else if (dtFeedbackReport.Rows[18]["ansText"].ToString() == "No")
+            {
+                Label19.Enabled = false;
+                Label20.Enabled = false;
+                Label21.Text = "\u25C9" + " " + "Without a proper file processing system in place, employees will resort to storing client and company information locally on their computing devices. In the event of a compromise, this puts the organization and its client at risk";
+            }
+            else if (dtFeedbackReport.Rows[18]["ansText"].ToString() == "Don't Know")
+            {
+                Label19.Text = "\u25C9" + " " + "Important paper documents must be stored securely in a locked file cabinet when not in use and must be handled only by authorized staff members to actively used them. Failure to do so can lead to a breach in confidential client or company information";
+                Label20.Enabled = false;
+                Label21.Text = "\u25C9" + " " + "Without a proper file processing system in place, employees will resort to storing client and company information locally on their computing devices. In the event of a compromise, this puts the organization and its client at risk";
+            }
+
+            if (dtFeedbackReport.Rows[21]["ansText"].ToString() == "Yes")
+            {
+                Label22.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[21]["ansText"].ToString() == "Yes")
+            {
+                Label22.Text = "\u25C9" + " " + "Having an access control system in place allows for the identification, authentication and authorization of users and entities by evaluating the users’ login credentials. Without this, unauthorized access can be gained to critical client and or organization information ";
+            }
+            else if (dtFeedbackReport.Rows[21]["ansText"].ToString() == "Don't Know")
+            {
+                Label22.Text = "\u25C9" + " " + "Having an access control system in place allows for the identification, authentication and authorization of users and entities by evaluating the users’ login credentials. Without this, unauthorized access can be gained to critical client and or organization information ";
+            }
+
+            if (dtFeedbackReport.Rows[22]["ansText"].ToString() == "Yes")
+            {
+                Label23.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[22]["ansText"].ToString() == "No")
+            {
+                Label23.Text = "\u25C9" + " " + "User activity monitoring is necessary for data protection and immediately detect and investigate suspicious users. It can also be valuable in finding rogue employees who can help in exfiltrating your data to competitors or engage in corporate espionage";
+            }
+            else if (dtFeedbackReport.Rows[22]["ansText"].ToString() == "Don't Know")
+            {
+                Label23.Text = "\u25C9" + " " + "User activity monitoring is necessary for data protection and immediately detect and investigate suspicious users. It can also be valuable in finding rogue employees who can help in exfiltrating your data to competitors or engage in corporate espionage";
+            }
+
+            if (dtFeedbackReport.Rows[23]["ansText"].ToString() == "Yes")
+            {
+                Label24.Enabled = false;
+            }
+            else if (dtFeedbackReport.Rows[23]["ansText"].ToString() == "No")
+            {
+                Label24.Text = "\u25C9" + " " + "Your employees are the first line of defence to protect the IT assets which stores valuable company data. Security awareness training serves as an added layer of defence and ensures your employees are aware of the potential cyber threats and how to prevent them.";
+            }
+            else if (dtFeedbackReport.Rows[23]["ansText"].ToString() == "Don't Know")
+            {
+                Label24.Text = "\u25C9" + " " + "Your employees are the first line of defence to protect the IT assets which stores valuable company data. Security awareness training serves as an added layer of defence and ensures your employees are aware of the potential cyber threats and how to prevent them.";
             }
         }
 

@@ -102,7 +102,8 @@
             margin-bottom: 20px;
             padding: 20px;
             width: 1100px;
-            height: 300px;
+            min-height: 300px;
+            overflow-y: hidden;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
     </style>
@@ -129,35 +130,27 @@
                     </tr>
                 </table>
 
-                <table id="scoreTable">
+                <table style="margin: 0 auto;">
                     <tr>
-                        <td>
-                            <div>
-                                <table>
-                                    <tr>
-                                        <td style="font-size: 16px; color: white;">Name : </td>
-                                        <td style="font-size: 16px; color: white;">
-                                            <asp:Label ID="lblUsername" Text="" runat="server" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-size: 16px; color: white;">Email Id : </td>
-                                        <td style="font-size: 16px; color: white;">
-                                            <asp:Label ID="lblEmailId" Text="" runat="server" />
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="font-size: 16px; color: white;">User Id : </td>
-                                        <td style="font-size: 16px; color: white;">
-                                            <asp:Label ID="lblUserId" Text="" runat="server" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
+                        <td style="font-size: 16px; color: white;">Name : </td>
+                        <td style="font-size: 16px; color: white;">
+                            <asp:Label ID="lblUsername" Text="" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 16px; color: white;">Email Id : </td>
+                        <td style="font-size: 16px; color: white;">
+                            <asp:Label ID="lblEmailId" Text="" runat="server" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 16px; color: white;">User Id : </td>
+                        <td style="font-size: 16px; color: white;">
+                            <asp:Label ID="lblUserId" Text="" runat="server" />
                         </td>
                     </tr>
                 </table>
-
+            
             </div>
 
             <%--NETWORK AND INFORMATION SECURITY--%>
@@ -184,20 +177,12 @@
 
                             </table>
                         </td>
-                        <td>
-                            <ol>
-                                <li>
-                                    <asp:Label ID="Label1" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label2" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label3" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label4" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label5" runat="server" Text="" /></li>
-                            </ol>
-
+                        <td style="width: 100%;">
+                            <asp:Label ID="Label1" runat="server" Text="" /><br />
+                            <asp:Label ID="Label2" runat="server" Text="" /><br />
+                            <asp:Label ID="Label3" runat="server" Text="" /><br />
+                            <asp:Label ID="Label4" runat="server" Text="" /><br />
+                            <asp:Label ID="Label5" runat="server" Text="" /><br />
                         </td>
                     </tr>
                 </table>
@@ -227,12 +212,8 @@
 
                             </table>
                         </td>
-                        <td>
-                            <ol>
-                                <li>
-                                    <asp:Label ID="Label6" runat="server" Text="" /></li>
-
-                            </ol>
+                        <td style="width: 100%;">
+                            <asp:Label ID="Label6" runat="server" Text="" /><br />
                         </td>
                     </tr>
                 </table>
@@ -264,17 +245,11 @@
 
                             </table>
                         </td>
-                        <td>
-                            <ol>
-                                <li>
-                                    <asp:Label ID="Label7" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label8" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label9" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label10" runat="server" Text="" /></li>
-                            </ol>
+                        <td style="width: 100%;">
+                            <asp:Label ID="Label7" runat="server" Text="" /><br />
+                            <asp:Label ID="Label8" runat="server" Text="" /><br />
+                            <asp:Label ID="Label9" runat="server" Text="" /><br />
+                            <asp:Label ID="Label10" runat="server" Text="" /><br />
                         </td>
                     </tr>
                 </table>
@@ -306,14 +281,9 @@
 
                             </table>
                         </td>
-                        <td>
-                            <ol>
-                                <li>
-                                    <asp:Label ID="Label11" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label12" runat="server" Text="" /></li>
-
-                            </ol>
+                        <td style="width: 100%;">
+                            <asp:Label ID="Label11" runat="server" Text="" /><br />
+                            <asp:Label ID="Label12" runat="server" Text="" /><br />
                         </td>
                     </tr>
                 </table>
@@ -352,21 +322,14 @@
 
                             </table>
                         </td>
-                        <td>
-                            <ol>
-                                <li>
-                                    <asp:Label ID="Label13" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label14" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label15" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label16" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label17" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label18" runat="server" Text="" /></li>
-                            </ol>
+                        <td style="width: 100%;">
+                            <asp:Label ID="Label13" runat="server" Text="" /><br />
+                            <asp:Label ID="Label14" runat="server" Text="" /><br />
+                            <asp:Label ID="Label15" runat="server" Text="" /><br />
+                            <asp:Label ID="Label16" runat="server" Text="" /><br />
+                            <asp:Label ID="Label17" runat="server" Text="" /><br />
+                            <asp:Label ID="Label18" runat="server" Text="" /><br />
+
                         </td>
                     </tr>
                 </table>
@@ -398,16 +361,10 @@
 
                             </table>
                         </td>
-                        <td>
-                            <ol>
-                                <li>
-                                    <asp:Label ID="Label19" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label20" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label21" runat="server" Text="" /></li>
-
-                            </ol>
+                        <td style="width: 100%;">
+                            <asp:Label ID="Label19" runat="server" Text="" /><br />
+                            <asp:Label ID="Label20" runat="server" Text="" /><br />
+                            <asp:Label ID="Label21" runat="server" Text="" /><br />
                         </td>
                     </tr>
                 </table>
@@ -437,16 +394,10 @@
 
                             </table>
                         </td>
-                        <td>
-                            <ol>
-                                <li>
-                                    <asp:Label ID="Label22" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label23" runat="server" Text="" /></li>
-                                <li>
-                                    <asp:Label ID="Label24" runat="server" Text="" /></li>
-
-                            </ol>
+                        <td style="width: 100%;">
+                            <asp:Label ID="Label22" runat="server" Text="" /><br />
+                            <asp:Label ID="Label23" runat="server" Text="" /><br />
+                            <asp:Label ID="Label24" runat="server" Text="" /><br />
                         </td>
                     </tr>
                 </table>
