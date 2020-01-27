@@ -31,33 +31,34 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $("a").on('click', function(event) {
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
-      // Store hash
-      var hash = this.hash;
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $("a").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+                    // Store hash
+                    var hash = this.hash;
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+    </script>
 
     <style>
-        html{
-            scroll-behaviour:smooth;
+        html {
+            scroll-behaviour: smooth;
         }
+
         .sticky {
             position: fixed;
             top: 0;
@@ -74,7 +75,7 @@ $(document).ready(function(){
             font-size: 25px;
             letter-spacing: 2px;
             background-color: #ff3414 !important;
-            font-weight:bold;
+            font-weight: bold;
             text-decoration: none;
             z-index: 100;
             /*    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);*/
@@ -180,6 +181,127 @@ $(document).ready(function(){
             margin-bottom: 30px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
+
+        
+/* line 2, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+        .testimonial_area {
+            background-image: url(../report_images/testimonial_bg.jpg);
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 122px 0 122px 0;
+        }
+
+@media (max-width: 767px) {
+  /* line 2, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+  .testimonial_area {
+    padding: 50px 0;
+  }
+}
+
+/* line 12, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .testmonial_active {
+  background: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 50px 60px 66px 60px;
+}
+
+@media (max-width: 767px) {
+  /* line 12, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+  .testimonial_area .testmonial_active {
+    padding: 40px 25px 40px 25px;
+  }
+}
+
+/* line 22, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .single_testmonial p {
+  color: #001D38;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  margin: 34px 0;
+}
+
+@media (min-width: 320px) and (max-width: 1500px) {
+  /* line 28, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+  .testimonial_area .single_testmonial p br {
+    display: none;
+  }
+}
+
+/* line 35, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .single_testmonial .testmonial_author {
+  padding-bottom: 35px;
+}
+
+/* line 37, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .single_testmonial .testmonial_author .thumb {
+  width: 42px;
+  height: 42px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: auto;
+  margin: auto auto 15px auto;
+}
+
+/* line 44, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .single_testmonial .testmonial_author h3 {
+  color: #001D38;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+/* line 50, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .single_testmonial .testmonial_author span {
+  font-size: 13px;
+  font-weight: 400;
+  color: #596672;
+}
+
+/* line 57, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .owl-carousel .owl-item img {
+  display: inline-block;
+  width: auto;
+}
+
+/* line 61, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .owl-carousel .owl-nav div.owl-next {
+  left: auto;
+  right: 0;
+}
+
+/* line 65, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .owl-carousel .owl-nav div {
+  left: 0;
+}
+
+/* line 69, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .owl-dots {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* line 73, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .owl-dots .owl-dot {
+  width: 14px;
+  height: 14px;
+  background: #FFD6D0;
+  display: inline-block;
+  margin: 0 5px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* line 81, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
+.testimonial_area .owl-dots .owl-dot.active {
+  background: #FF3414;
+}
     </style>
 </head>
 
@@ -190,14 +312,14 @@ $(document).ready(function(){
 
     <!-- header-start -->
     <header>
-        <div class="header-area " id="sThEader" style="position:fixed;top:0;">
-            <div class="header-top_area d-none d-lg-block">
+        <div class="header-area " id="sThEader" style="position: fixed; top: 0;">
+            <div class="header-top_area d-none d-lg-block" style="padding: 10px 0;">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-4 col-lg-4">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img src="img/logo-sm.png" alt="">
+                                    <img src="img/logo-sm.png" alt="" style="width:250px; height:75px;">
                                 </a>
                             </div>
                         </div>
@@ -205,8 +327,8 @@ $(document).ready(function(){
                             <div class="header_right d-flex align-items-center">
                                 <div class="short_contact_list">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-envelope"></i>info@docmed.com</a></li>
-                                        <li><a href="#"><i class="fa fa-phone"></i>1601-609 6780</a></li>
+                                        <li><a href="#"><i class="fa fa-envelope"></i>connect@brysoninsurance.ca</a></li>
+                                        <li><a href="#"><i class="fa fa-phone"></i>905.426.8787</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -214,7 +336,7 @@ $(document).ready(function(){
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </header>
     <!-- header-end -->
@@ -227,10 +349,14 @@ $(document).ready(function(){
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-8">
                         <div class="slider_text text-center justify-content-center">
-                            <p>As technology advances, cyber risk grows. No business is immune to the threat of cybercrime</p>
-                           <!-- <h3>Cyber Security Risk </h3>-->
-                            <p>In 3 steps we will help you evaluate your company’s security posture and provide you with a summary of the cyber risks to your organizational operations, intellectual property and information systems</p>
-                            <%--<a class="boxed-btn3">Our Services</a>--%>
+                            <p>
+                                As per the 2019 Scalar Security Study, it has been found that 100 % of Canadian businesses surveyed have experienced a cyber security attack in the past 12 months.<br />
+$9500 is the average hourly loss to SMEs experiencing cyber related downtime.<br />
+Bryson Insurance has the cyber insurance solution for you and your business. To understand your business and recommend the appropriate cyber insurance, we would like to perform a short risk assessment.<br />
+                                To begin click on the below button.
+
+                            </p>
+
                             <div class="book_btn d-none d-lg-block">
                                 <p id="startBtn">
                                     <a href="#contactArea">
@@ -254,7 +380,7 @@ $(document).ready(function(){
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_transport" style="box-shadow: 10px 0 5px -2px #888;">
+                    <div class="single_transport" style="box-shadow: 10px 0 5px -2px #888;width:350px;height:450px;">
                         <div class="icon">
                             <img src="img/svg_icon/airplane.png" alt="">
                         </div>
@@ -266,27 +392,27 @@ $(document).ready(function(){
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_transport" style="box-shadow: 10px 0 5px -2px #888;">
+                    <div class="single_transport" style="box-shadow: 10px 0 5px -2px #888;width:350px;height:450px;">
                         <div class="icon">
                             <img src="img/svg_icon/live.png" alt="">
                         </div>
                         <h3>Who needs cyber risk insurance?</h3>
                         <p>
-                            Do you handle information electronically? Unless you’re still using pencil and paper to facilitate, record, and process transactions, your data is likely vulnerable.
+                            Do you handle information electronically? Unless you’re still using pencil and paper to facilitate, your data is likely vulnerable.
                             A business doesn’t need to be rooted in the tech sphere to be prone to cybercrime – any business that uses computers is exposed to cyber risk.
                         </p>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6">
-                    <div class="single_transport" style="box-shadow: 10px 0 5px -2px #888;">
+                    <div class="single_transport" style="box-shadow: 10px 0 5px -2px #888;width:350px;height:450px;">
                         <div class="icon">
                             <img src="img/svg_icon/world.png" alt="">
                         </div>
-                        <h3>Service</h3>
+                        <h3>How we can help?</h3>
                         <p>
                             Keeping your guard up can be a full-time job, but we can help ease the burden with smart and focused cyber support. 
                             From ransomware to lost devices, we’ve got you covered with first-party
-                            and third-party cyber coverage, plus protection for the data stored on your system or on another system
+                            and third-party cyber coverage, plus protection for the data stored on your system or on another system.Scroll down below to know more about the coverages we offer.
                         </p>
                     </div>
                 </div>
@@ -309,47 +435,63 @@ $(document).ready(function(){
                     <div class="service_active owl-carousel">
                         <div class="single_service">
                             <div class="thumb">
-                                <img src="img/service/1.png" alt="">
+                                <img src="report_images/Third%20party%20risk%20management.jpg" alt="" style="width:350px;height:250px;">
                             </div>
                             <div class="service_info">
                                 <h3><a href="service_details.html">Third party claims</a></h3>
                                 <p>
-                                    • Network and Information Security
-                                   • Privacy and Governance of Information
-                                   • Multimedia and Internet Intellectual property
+                                    Post a cyber breach, a company can be sued by its clients for failing in its responsibility 
+                                    to a client’s online security. A third-party coverage can provide for expenses (but not limited to) such as:<br />
+                                        • Lawsuits <br />
+                                        • Different types of infringement  <br />
+                                        • Privacy liabilities <br />
                                 </p>
                             </div>
                         </div>
                         <div class="single_service">
                             <div class="thumb">
-                                <img src="img/service/2.png" alt="">
+                                <img src="report_images/first_partyclaims.jpg" alt="" style="width:350px;height:250px;">
                             </div>
                             <div class="service_info">
                                 <h3><a href="service_details.html">First party claims</a></h3>
                                 <p>
-                                    • Business Interruption and Recovery
-                                   • Complaince to Security Standards
+                                    Resulting from a cyber breach, an organization can face financial fallouts. 
+                                    First party coverages can provide for expenses (but not limited to) such as:<br />
+                                        • Notification costs<br />
+                                        • PCI fines<br />
+                                        • Credit monitoring<br />
+                                        • Business interruption and Recovery <br />
                                 </p>
                             </div>
                         </div>
                         <div class="single_service">
                             <div class="thumb">
-                                <img src="img/service/3.png" alt="">
+                                <img src="report_images/crimes.jpg" alt="" style="width:350px;height:250px;">
                             </div>
                             <div class="service_info">
                                 <h3><a href="service_details.html">Crime</a></h3>
-                                <p>• Workplace Asset Security and Employee Security Awareness</p>
+                                <p>
+                                   Hackers have used malwares like ransomwares to block the victim’s owned data unless the requested ransom is paid.
+                                    We can provide for expenses (but not limited to) arising from a cyber-attack such as:<br />
+                                    • Network Extortion <br />
+                                    • Electronic data theft <br />
+                                    • Telephone Hacking <br />
+                                    • Social Engineering Fraud <br />
+
+                                </p>
                             </div>
                         </div>
                         <div class="single_service">
                             <div class="thumb">
-                                <img src="img/service/1.png" alt="">
+                                <img src="report_images/others_claims.png" alt="" style="width:350px;height:250px;">
                             </div>
                             <div class="service_info">
                                 <h3><a href="service_details.html">Other coverages</a></h3>
                                 <p>
-                                    • Physical Document Protection
-                                   • Insider Threat Protection
+                                    A cyber attack can take place in many ways, which can put your company at risk. We have you covered for your data and other company assets.<br />
+                                    • Rogue employee or insider threats<br />
+                                   • Physical documents <br />
+                                    • Mobile devices <br />
                                 </p>
                             </div>
                         </div>
@@ -373,7 +515,7 @@ $(document).ready(function(){
                 </div>
                 <div class="col-xl-5 col-md-6">
                     <div class="call_add_action">
-                        <%-- <a href="#" class="boxed-btn3">+1 905-426-8787</a>--%>
+                        
                     </div>
                 </div>
             </div>
@@ -393,19 +535,7 @@ $(document).ready(function(){
                     <div class="col-xl-6 col-lg-6 col-md-6">
                         <div class="features_info">
                             <h3>Why Choose Us?</h3>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt.
-                           
-                            </p>
-                            <ul>
-                                <li>Apartments frequently or motionless. </li>
-                                <li>Duis aute irure dolor in reprehenderit in voluptate. </li>
-                                <li>Voluptatem quia voluptas sit aspernatur.</li>
-                            </ul>
-
-                            <%--  <div class="about_btn">
-                                <%--<a class="boxed-btn3-line" href="about.html">About Us</a>
-                            </div>--%>
+           
                         </div>
                     </div>
                 </div>
@@ -461,8 +591,7 @@ $(document).ready(function(){
                                 <div class="quote">
                                     <img src="img/svg_icon/quote.svg" alt="">
                                 </div>
-                                <p>
-                                    These cyber events are impacting companies and customers alike. Small and medium-sized businesses are the most common victims of cyber breaches. 
+                                <p>These cyber events are impacting companies and customers alike. Small and medium-sized businesses are the most common victims of cyber breaches. 
                                     This is likely the result of the time and resources small and medium-sized businesses can spend on cyber security. 
                                 </p>
                                 <div class="testmonial_author">
@@ -479,16 +608,14 @@ $(document).ready(function(){
                                 <div class="quote">
                                     <img src="img/svg_icon/quote.svg" alt="">
                                 </div>
-                                <p>
-                                    These cyber events are impacting companies and customers alike. Small and medium-sized businesses are the most common victims of cyber breaches. 
-                                    This is likely the result of the time and resources small and medium-sized businesses can spend on cyber security. 
-                                </p>
+                                <p> Improve online safety for yourself and your children, specific social apps 
+                                    that are especially dangerous for children, predatory research and information gathering tactics</p>
                                 <div class="testmonial_author">
                                     <div class="thumb">
                                         <img src="img/case/testmonial.png" alt="">
                                     </div>
-                                    <h3>Tracy L. Makris</h3>
-                                    <span>President at Bryson Insurance</span>
+                                    <h3>Kyle Paterson</h3>
+                                    <span>Director of Culture and Business Development</span>
                                 </div>
                             </div>
                         </div>
@@ -497,16 +624,14 @@ $(document).ready(function(){
                                 <div class="quote">
                                     <img src="img/svg_icon/quote.svg" alt="">
                                 </div>
-                                <p>
-                                    These cyber events are impacting companies and customers alike. Small and medium-sized businesses are the most common victims of cyber breaches. 
-                                    This is likely the result of the time and resources small and medium-sized businesses can spend on cyber security. 
-                                </p>
+                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
+                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
                                 <div class="testmonial_author">
                                     <div class="thumb">
                                         <img src="img/case/testmonial.png" alt="">
                                     </div>
-                                    <h3>Tracy L. Makris</h3>
-                                    <span>President at Bryson Insurance</span>
+                                    <h3>Robert Thomson</h3>
+                                    <span>Business Owner</span>
                                 </div>
                             </div>
                         </div>
@@ -523,12 +648,13 @@ $(document).ready(function(){
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-5">
                     <div class="Estimate_info">
-                        <h3>Get Your Free Risk Assesment</h3>
+                        <h3>Basic Information</h3>
                         <p>
-                            Esteem spirit temper too say adieus who direct esteem. It look estee luckily or picture
-                            placing.
+                            Let's start by getting details about you and your business. 
+                            <br />
+                            After providing the details, click <b style="color: #ff3414; font-size:20px;">Next</b>
                         </p>
-                     <!--   <a href="#" class="boxed-btn3">+10 672 457 356</a> -->
+                        <!--   <a href="#" class="boxed-btn3">+10 672 457 356</a> -->
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-7">
@@ -610,53 +736,7 @@ $(document).ready(function(){
     </section>
     <!-- Estimate_area end  -->
 
-    <!-- contact_location  -->
-    <%--<div class="contact_location">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6">
-                    <div class="location_left">
-                        <div class="logo">
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                        <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-3">
-                    <div class="single_location">
-                        <h3>
-                            <img src="img/icon/address.svg" alt="">
-                            Location</h3>
-                        <p>
-                            600/D, Kings road, Green lane
-                            NewYork-2563
-                        </p>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-3">
-                    <div class="single_location">
-                        <h3>
-                            <img src="img/icon/support.svg" alt="">
-                            Location</h3>
-                        <p>
-                            +10 267 3563 4562
-                            <br>
-                            support@logistico.com
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>--%>
 
-    <!--/ contact_location  -->
 
 
     <!-- footer start -->
@@ -726,67 +806,61 @@ $(document).ready(function(){
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script >
-                                                    All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i>by < a href = "https://colorlib.com" target = "_blank" > Colorlib</a >
-                            < !--Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p >
-                    </div >
-                </div >
-            </div >
-        </div >
-    </footer >
-    < !--/ footer end  -->
-                                                    < !--Button trigger modal-- >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    < !--Modal -->
+
                                                     <div class="modal fade custom_search_pop" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="serch_form">
                                                                     <input type="text" placeholder="search">
-                                                                        <button type="submit">search</button>
-                </div>
+                                                                    <button type="submit">search</button>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
 
-                                                        <!-- JS here -->
+    <!-- JS here -->
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-                            <script src="js/vendor/jquery-1.12.4.min.js"></script>
-                            <script src="js/popper.min.js"></script>
-                            <script src="js/bootstrap.min.js"></script>
-                            <script src="js/owl.carousel.min.js"></script>
-                            <script src="js/isotope.pkgd.min.js"></script>
-                            <script src="js/ajax-form.js"></script>
-                            <script src="js/waypoints.min.js"></script>
-                            <script src="js/jquery.counterup.min.js"></script>
-                            <script src="js/imagesloaded.pkgd.min.js"></script>
-                            <script src="js/scrollIt.js"></script>
-                            <script src="js/jquery.scrollUp.min.js"></script>
-                            <script src="js/wow.min.js"></script>
-                            <script src="js/nice-select.min.js"></script>
-                            <script src="js/jquery.slicknav.min.js"></script>
-                            <script src="js/jquery.magnific-popup.min.js"></script>
-                            <script src="js/plugins.js"></script>
-                            <!-- <script src="js/gijgo.min.js"></script> -->
-                            <script src="js/slick.min.js"></script>
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/scrollIt.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <!-- <script src="js/gijgo.min.js"></script> -->
+    <script src="js/slick.min.js"></script>
 
 
 
-                            <!--contact js-->
-                            <script src="js/contact.js"></script>
-                            <script src="js/jquery.ajaxchimp.min.js"></script>
-                            <script src="js/jquery.form.js"></script>
-                            <script src="js/jquery.validate.min.js"></script>
-                            <script src="js/mail-script.js"></script>
-                            <script>
+    <!--contact js-->
+    <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script>
 
 
 
-                            </script>
+</script>
 
-                            <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 
 

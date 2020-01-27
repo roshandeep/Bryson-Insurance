@@ -104,7 +104,20 @@
             width: 1100px;
             min-height: 300px;
             overflow-y: hidden;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.50);
+        }
+
+        .divBullet {
+            width: 5%;
+            float: left;
+            display: block;
+        }
+
+        .divLabel {
+            width: 95%;
+            float: right;
+            display: block;
         }
     </style>
 </head>
@@ -130,27 +143,11 @@
                     </tr>
                 </table>
 
-                <table style="margin: 0 auto;">
-                    <tr>
-                        <td style="font-size: 16px; color: white;">Name : </td>
-                        <td style="font-size: 16px; color: white;">
-                            <asp:Label ID="lblUsername" Text="" runat="server" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 16px; color: white;">Email Id : </td>
-                        <td style="font-size: 16px; color: white;">
-                            <asp:Label ID="lblEmailId" Text="" runat="server" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="font-size: 16px; color: white;">User Id : </td>
-                        <td style="font-size: 16px; color: white;">
-                            <asp:Label ID="lblUserId" Text="" runat="server" />
-                        </td>
-                    </tr>
-                </table>
-            
+
+                <p style="text-align: center; color: white;">
+                    Below is a risk assessment that has evaluated your company's security posture. For every category we have assigned a risk score which helps in evaluating the risks to your company and how it can be mitigated based on the industry standard security controls.
+                </p>
+
             </div>
 
             <%--NETWORK AND INFORMATION SECURITY--%>
@@ -177,12 +174,47 @@
 
                             </table>
                         </td>
-                        <td style="width: 100%;">
-                            <asp:Label ID="Label1" runat="server" Text="" /><br />
-                            <asp:Label ID="Label2" runat="server" Text="" /><br />
-                            <asp:Label ID="Label3" runat="server" Text="" /><br />
-                            <asp:Label ID="Label4" runat="server" Text="" /><br />
-                            <asp:Label ID="Label5" runat="server" Text="" /><br />
+                        <td style="width: 100%; text-align: justify;">
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label1_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label1" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label2_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label2" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label3_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label3" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label4_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label4" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label5_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label5" runat="server" Text="" />
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -212,8 +244,15 @@
 
                             </table>
                         </td>
-                        <td style="width: 100%;">
-                            <asp:Label ID="Label6" runat="server" Text="" /><br />
+                        <td style="width: 100%; text-align: justify;">
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label6_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label6" runat="server" Text="" />
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -245,11 +284,39 @@
 
                             </table>
                         </td>
-                        <td style="width: 100%;">
-                            <asp:Label ID="Label7" runat="server" Text="" /><br />
-                            <asp:Label ID="Label8" runat="server" Text="" /><br />
-                            <asp:Label ID="Label9" runat="server" Text="" /><br />
-                            <asp:Label ID="Label10" runat="server" Text="" /><br />
+                        <td style="width: 100%; text-align: justify;">
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label7_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label7" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label8_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label8" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label9_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label9" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label10_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label10" runat="server" Text="" />
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -281,9 +348,23 @@
 
                             </table>
                         </td>
-                        <td style="width: 100%;">
-                            <asp:Label ID="Label11" runat="server" Text="" /><br />
-                            <asp:Label ID="Label12" runat="server" Text="" /><br />
+                        <td style="width: 100%; text-align: justify;">
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label11_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label11" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label12_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label12" runat="server" Text="" />
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -322,13 +403,55 @@
 
                             </table>
                         </td>
-                        <td style="width: 100%;">
-                            <asp:Label ID="Label13" runat="server" Text="" /><br />
-                            <asp:Label ID="Label14" runat="server" Text="" /><br />
-                            <asp:Label ID="Label15" runat="server" Text="" /><br />
-                            <asp:Label ID="Label16" runat="server" Text="" /><br />
-                            <asp:Label ID="Label17" runat="server" Text="" /><br />
-                            <asp:Label ID="Label18" runat="server" Text="" /><br />
+                        <td style="width: 100%; text-align: justify;">
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label13_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label13" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label14_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label14" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label15_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label15" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label16_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label16" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label17_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label17" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label18_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label18" runat="server" Text="" />
+                                </div>
+                            </div>
 
                         </td>
                     </tr>
@@ -361,10 +484,31 @@
 
                             </table>
                         </td>
-                        <td style="width: 100%;">
-                            <asp:Label ID="Label19" runat="server" Text="" /><br />
-                            <asp:Label ID="Label20" runat="server" Text="" /><br />
-                            <asp:Label ID="Label21" runat="server" Text="" /><br />
+                        <td style="width: 100%; text-align: justify;">
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label19_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label19" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label20_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label20" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label21_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label21" runat="server" Text="" />
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
@@ -394,17 +538,38 @@
 
                             </table>
                         </td>
-                        <td style="width: 100%;">
-                            <asp:Label ID="Label22" runat="server" Text="" /><br />
-                            <asp:Label ID="Label23" runat="server" Text="" /><br />
-                            <asp:Label ID="Label24" runat="server" Text="" /><br />
+                        <td style="width: 100%; text-align: justify;">
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label22_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label22" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label23_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label23" runat="server" Text="" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="divBullet">
+                                    <asp:Label ID="Label24_bullet" runat="server" Text="" />
+                                </div>
+                                <div class="divLabel">
+                                    <asp:Label ID="Label24" runat="server" Text="" />
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 </table>
             </div>
 
             <div id="exportButton">
-                <asp:Button Width="100px" Style="margin-left: 3px;" ID="Button1" Height="27px" runat="server" OnClick="Button1_Click" Text="Create PDF" />
+                <asp:Button Width="150px" Style="margin-left: 3px;" ID="Button1" Height="27px" runat="server" OnClick="Button1_Click" Text="Download Report" />
             </div>
             <%--       <div">
                 <asp:Button Width="100px" Style="margin-left: 3px;" ID="Button2" Height="27px" runat="server" OnClick="Button2_Click" Text="Email PDF" />

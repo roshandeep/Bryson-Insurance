@@ -24,11 +24,11 @@ namespace BR
 
         public void LoadQuestions()
         {
-            string industry = Session["industry"].ToString();
+            //string industry = Session["industry"].ToString();
             DAL dal = new DAL();
             dt = new DataTable();
-            dt = dal.LoadIndustryQuestions(industry);
-            //dt = dal.LoadIndustryQuestions("Manufacturers");
+            //dt = dal.LoadIndustryQuestions(industry);
+            dt = dal.LoadIndustryQuestions("Manufacturers");
             lblQues1.Text = dt.Rows[0]["question"].ToString();
             lblQues2.Text = dt.Rows[1]["question"].ToString();
             lblQues3.Text = dt.Rows[2]["question"].ToString();
@@ -64,7 +64,7 @@ namespace BR
             int userId = Convert.ToInt32(Session["userId"]);
             string industry = Session["industry"].ToString();
 
-            //int userId = 72;
+            //int userId = 80;
             //string industry = "Manufacturers";
 
             DAL dal = new DAL();
@@ -84,6 +84,15 @@ namespace BR
             {
                 ansText1 = "Yes";
                 ans1 = dt.Rows[0]["question_wt_yes"].ToString();
+                int count = 0;
+                for (int i = 0; i < CheckBoxList2.Items.Count; i++)
+                {
+                    if(CheckBoxList2.Items[i].Selected == true )
+                    {
+                        count++;
+                    }
+                }
+                ans1 = (Convert.ToDouble(ans1) + (count * (0.25))).ToString();
             }
             else if (ddlAns1.SelectedItem.Text == "No")
             {
@@ -273,6 +282,15 @@ namespace BR
             {
                 ansText11 = "Yes";
                 ans11 = dt.Rows[10]["question_wt_yes"].ToString();
+                int count = 0;
+                for (int i = 0; i < chk11.Items.Count; i++)
+                {
+                    if (chk11.Items[i].Selected == true)
+                    {
+                        count++;
+                    }
+                }
+                ans11 = (Convert.ToDouble(ans11) + (count * (0.25))).ToString();
             }
             else if (ddlAns11.SelectedItem.Text == "No")
             {
@@ -294,6 +312,15 @@ namespace BR
             {
                 ansText12 = "Yes";
                 ans12 = dt.Rows[11]["question_wt_yes"].ToString();
+                int count = 0;
+                for (int i = 0; i < chkbxAns12.Items.Count; i++)
+                {
+                    if (chkbxAns12.Items[i].Selected == true)
+                    {
+                        count++;
+                    }
+                }
+                ans12 = (Convert.ToDouble(ans12) + (count * (0.25))).ToString();
             }
             else if (ddlAns12.SelectedItem.Text == "Don't Know")
             {

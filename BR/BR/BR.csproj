@@ -385,8 +385,13 @@
     <Content Include="Questionnaire.aspx" />
     <Content Include="ReportDownload.aspx" />
     <Content Include="report_images\Average_Risk.PNG" />
+    <Content Include="report_images\crimes.jpg" />
+    <Content Include="report_images\first_partyclaims.jpg" />
     <Content Include="report_images\High_Risk.PNG" />
     <Content Include="report_images\Low_Risk.PNG" />
+    <Content Include="report_images\others_claims.png" />
+    <Content Include="report_images\testimonial_bg.jpg" />
+    <Content Include="report_images\Third party risk management.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

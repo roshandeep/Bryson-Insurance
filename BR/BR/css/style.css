@@ -1272,7 +1272,7 @@ h3 {
 
 /* line 320, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_header.scss */
 .header-area .header-top_area {
-  padding: 17px 0;
+  padding: 10px 0;
   background: #fff;
   border-bottom: 1px solid #EAEAEA;
 }
@@ -2122,13 +2122,12 @@ h3 {
 
 /* line 2, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_testmonial.scss */
 .testimonial_area {
-  area .single_testmonial .testmonial_author span {
-  font-size: 13px;
-  font-weight: 400;
-  color: #596672;
-}
-
-/* line 57, ../../Arafath/CL/Cl November/223. Transportation/HTMLL  padding: 122px 0 122px 0;
+    background-image: url(../img/banner/testmonial.png);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 122px 0 122px 0;
 }
 
 @media (max-width: 767px) {
