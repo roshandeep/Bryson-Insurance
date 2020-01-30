@@ -385,6 +385,7 @@
     <Content Include="Questionnaire.aspx" />
     <Content Include="ReportDownload.aspx" />
     <Content Include="report_images\Average_Risk.PNG" />
+    <Content Include="report_images\backdrop.png" />
     <Content Include="report_images\crimes.jpg" />
     <Content Include="report_images\first_partyclaims.jpg" />
     <Content Include="report_images\High_Risk.PNG" />

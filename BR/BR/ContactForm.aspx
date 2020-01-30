@@ -344,7 +344,7 @@
     <!-- slider_area_start -->
 
     <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1">
+        <div class="single_slider  d-flex align-items-center slider_bg_1" style="background-image:url('../report_images/backdrop.png');">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-8">
@@ -724,7 +724,7 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
 
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnSubmit" runat="server" class="boxed-btn3-line" Text="Next" OnClick="btnSubmit_Click" />
+                                        <asp:Button ID="btnSubmit" runat="server" class="boxed-btn3-line" Text="Next" OnClick="btnSubmit_Click" Font-Size="20px" style="padding:0px;"/>
                                     </div>
                                 </div>
                             </div>

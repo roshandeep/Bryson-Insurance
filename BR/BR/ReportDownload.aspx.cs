@@ -21,9 +21,9 @@ namespace BR
             if (!IsPostBack)
             {
                 DAL dal = new DAL();
-                //userId = Convert.ToInt32(Session["userId"]);
-                //industry = Session["industry"].ToString();
-                userId = dal.GetRecentFeedbackUser();
+
+                //userId = dal.GetRecentFeedbackUser();
+                userId = 93;
 
                 DataTable dtUserInfo = dal.GetUserInfo(userId);
                 DataTable dtFeedbackReport = dal.GetFeedbackReport(userId);
@@ -254,8 +254,8 @@ namespace BR
             }
             else if(dtFeedbackReport.Rows[5]["ansText"].ToString() == "No")
             {
-                Label6_bullet.Enabled = false;
-                Label6.Enabled = false;
+                Label6_bullet.Text = "\u25C9";
+                Label6.Text = "We found you at low risk for this category. But remember that risk assessment is not a one-time activity, your IT environment and the threat landscape are constantly changing, so remember to perform it on a regular basis.";
             }
             else if(dtFeedbackReport.Rows[5]["ansText"].ToString() == "Don't Know")
             {
@@ -530,9 +530,6 @@ namespace BR
 
         }
 
-        //protected void Button2_Click(object sender, EventArgs e)
-        //{
-        //    SendPdfToUser();
-        //}
+
     }
 }

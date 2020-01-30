@@ -175,7 +175,6 @@
             $("#otherCoverage").slideDown(1000);
         });
 
-
     </script>
     <style>
         label {
@@ -235,6 +234,7 @@
             height: 0;
             overflow: hidden;
         }
+
     </style>
 </head>
 <body>
@@ -271,7 +271,7 @@
         <!-- header-end -->
 
         <!-- bradcam_area  -->
-        <div class="bradcam_area bradcam_bg_1">
+        <div class="bradcam_area bradcam_bg_1" style="background-image: url('../report_images/backdrop.png');">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12">
@@ -436,7 +436,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnThirdParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
+                                        <asp:Button ID="btnThirdParty" runat="server" CssClass="boxed-btn3-line" Text="Next" Font-Size="20px" style="padding:0px;" ClientIDMode="Static" OnClientClick="return false;" />
                                     </div>
                                 </div>
                             </div>
@@ -636,7 +636,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnFirstParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
+                                        <asp:Button ID="btnFirstParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" Font-Size="20px" style="padding:0px;"/>
                                     </div>
                                 </div>
                             </div>
@@ -657,7 +657,7 @@
                                 <div class="col-xl-12" style="color: white !Important; padding-bottom: 30px; text-align: center;">
                                     <div class="input_field">
                                         <p style="color: white !Important; font-size: 25px; font-weight: 400; font-family: 'Poppins';">
-                                            Workplace Asset Security and Employee Security Awareness
+                                            Information System Security and Employee Security Awareness
                                         </p>
                                     </div>
                                 </div>
@@ -765,7 +765,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnCrime" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" />
+                                        <asp:Button ID="btnCrime" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" Font-Size="20px" style="padding:0px;"/>
                                     </div>
                                 </div>
                             </div>
@@ -849,7 +849,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-12" style="color: white !Important; padding-bottom: 30px; padding-top:40px; text-align: center;">
+                                <div class="col-xl-12" style="color: white !Important; padding-bottom: 30px; padding-top: 40px; text-align: center;">
                                     <div class="input_field">
                                         <p style="color: white !Important; font-size: 28px; font-weight: 400; font-family: 'Poppins';">
                                             Insider Threat And Rogue Employee Protection
@@ -909,7 +909,7 @@
                                 <br />
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnSubmit" runat="server" CssClass="boxed-btn3-line" Text="SUBMIT" OnClick="btnSubmit_Click" />
+                                        <asp:Button ID="btnSubmit" runat="server" CssClass="boxed-btn3-line" Text="SUBMIT" OnClick="btnSubmit_Click" Font-Size="20px" style="padding:0px;"/>
                                     </div>
                                 </div>
                             </div>
