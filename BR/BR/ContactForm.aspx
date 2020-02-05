@@ -552,7 +552,7 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
                     <div class="col-xl-3 col-md-3">
                         <div class="single_counter text-center">
                             <h3><span class="counter">42</span> <span>+</span> </h3>
-                            <p>Countries Covered</p>
+                            <p>Sectors Covered</p>
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-3">
