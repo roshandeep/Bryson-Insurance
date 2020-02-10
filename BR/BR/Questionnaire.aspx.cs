@@ -24,11 +24,11 @@ namespace BR
 
         public void LoadQuestions()
         {
-            //string industry = Session["industry"].ToString();
+            string industry = Session["industry"].ToString();
             DAL dal = new DAL();
             dt = new DataTable();
-            //dt = dal.LoadIndustryQuestions(industry);
-            dt = dal.LoadIndustryQuestions("Manufacturers");
+            dt = dal.LoadIndustryQuestions(industry);
+            //dt = dal.LoadIndustryQuestions("Manufacturers");
             lblQues1.Text = dt.Rows[0]["question"].ToString();
             lblQues2.Text = dt.Rows[1]["question"].ToString();
             lblQues3.Text = dt.Rows[2]["question"].ToString();

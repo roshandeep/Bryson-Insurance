@@ -9,7 +9,11 @@ namespace BR
 {
     public class DAL
     {
-        string connetionString = @"Server=LAPTOP-HM18U6J6; Database=BRYSON_INSURANCE;Integrated Security=true;";
+        //Local
+        //string connetionString = @"Server=LAPTOP-HM18U6J6; Database=BRYSON_INSURANCE;Integrated Security=true;";
+
+        //AWS
+        string connetionString = @"Server=brysondevdb.czcyf30ks9id.us-east-1.rds.amazonaws.com; Database=BRYSON_INSURANCE;User Id=brysondev;Password=aihub2020;";
 
         SqlCommand cmd;
 
