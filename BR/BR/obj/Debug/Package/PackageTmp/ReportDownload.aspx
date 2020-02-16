@@ -20,7 +20,7 @@
             margin-right: auto;
         }
 
-        #brysonLogo {
+        .brysonLogo {
             border-radius: 25px;
             display: block;
             margin-left: auto;
@@ -132,16 +132,12 @@
 <body>
     <form id="form1" runat="server">
 
-        <div style="width: 95%; display: block; margin-left: auto; margin-right: auto; align-content: center; border: 2px solid grey; border-radius: 2px;">
-            <%--TOP MARGIN FOR PDF--%>
-            <div style="width: 100%; height: 50px;">
-            </div>
 
             <div class="boxshadow" style="background-color: #1E4886; height: 350px;">
                 <table style="margin: 0 auto; text-align: center">
                     <tr>
                         <td style="text-align: center;">
-                            <img id="brysonLogo" src="img/logo-sm.png" />
+                             <asp:Image CssClass="brysonLogo" ID="brysonLogo" runat="server" />
                         </td>
                     </tr>
                     <tr>
@@ -171,12 +167,12 @@
                             <table>
                                 <tr>
                                     <td style="text-align: center;">
-                                        <asp:Image ID="img_networkAndInfoSec" runat="server" ImageUrl="report_images/High_Risk.PNG" AlternateText="Score" ImageAlign="Middle" Width="300" />
+                                        <asp:Image ID="img_networkAndInfoSec" runat="server" ImageAlign="Middle" Width="300" />
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lblnetworkAndInfoSec" runat="server" Text="" />
+                                        <%--<asp:Label ID="lblnetworkAndInfoSec" runat="server" Text="" />--%>
                                     </td>
                                 </tr>
 
@@ -246,7 +242,7 @@
                                 </tr>
                                 <tr>
                                     <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lblintelProp_sc" runat="server" Text="" />
+                                        <%--<asp:Label ID="lblintelProp_sc" runat="server" Text="" />--%>
                                     </td>
                                 </tr>
 
@@ -286,7 +282,7 @@
                                 </tr>
                                 <tr>
                                     <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lblbusiInter_sc" runat="server" Text="" />
+                                       <%-- <asp:Label ID="lblbusiInter_sc" runat="server" Text="" />--%>
                                     </td>
                                 </tr>
 
@@ -350,7 +346,7 @@
                                 </tr>
                                 <tr>
                                     <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lblcompSecStand_sc" runat="server" Text="" />
+                                        <%--<asp:Label ID="lblcompSecStand_sc" runat="server" Text="" />--%>
                                     </td>
                                 </tr>
                             </table>
@@ -377,15 +373,9 @@
                 </table>
             </div>
 
-        </div>
-        <p style="page-break-after: always;"></p>
-        <%--TOP MARGIN FOR PDF--%>
-        <div style="width: 100%; height: 50px;">
-        </div>
-        <div style="width: 95%; display: block; margin-left: auto; margin-right: auto; align-content: center; border: 2px solid grey; border-radius: 2px;">
-            <%--TOP MARGIN FOR PDF--%>
-            <div style="width: 100%; height: 50px;">
-            </div>
+       
+
+   
             <%--INFORMATION SYSTEM SECURITY AND EMPLOYEE SECURITY AWARENESS--%>
             <div class="boxshadow">
                 <table>
@@ -404,7 +394,7 @@
                                 </tr>
                                 <tr>
                                     <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lblwkPlsAsset_sc" runat="server" Text="" />
+                                       <%-- <asp:Label ID="lblwkPlsAsset_sc" runat="server" Text="" />--%>
                                     </td>
                                 </tr>
 
@@ -485,7 +475,7 @@
                                 </tr>
                                 <tr>
                                     <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lblphysicalDoc_sc" runat="server" Text="" />
+                                        <%--<asp:Label ID="lblphysicalDoc_sc" runat="server" Text="" />--%>
                                     </td>
                                 </tr>
 
@@ -539,7 +529,7 @@
                                 </tr>
                                 <tr>
                                     <td class="scoreAlignment" style="text-align: center;">
-                                        <asp:Label ID="lblinsideThreat_sc" runat="server" Text="" />
+                                        <%--<asp:Label ID="lblinsideThreat_sc" runat="server" Text="" />--%>
                                     </td>
                                 </tr>
 
@@ -580,7 +570,7 @@
                     OnClick="Button1_Click" Text="Download Report" />
             </div>
       
-        </div>
+       
     </form>
 
 </body>

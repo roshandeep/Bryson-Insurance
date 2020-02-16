@@ -151,6 +151,7 @@
             }
         }
 
+
         /* jQuery for the estimate box*/
 
         $(document).ready(function () {
@@ -161,18 +162,69 @@
         });
 
         $(document).on('click', '[id*=btnThirdParty]', function () {
-            $("#thirdParty").slideUp(1000);
-            $("#firstParty").slideDown(1000);
+            var v1 = document.getElementById("<%=RequiredFieldValidator1.ClientID%>");
+            var v6 = document.getElementById("<%=reqAns6.ClientID%>");
+            ValidatorValidate(v1);
+            ValidatorValidate(v6);
+            if (v1.isvalid && v6.isvalid) {
+                $("#thirdParty").slideUp(1000);
+                $("#firstParty").slideDown(1000);
+                window.scrollTo({
+                    top: 10,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                alert("Fill in all the questions before moving ahead");
+            }
         });
 
         $(document).on('click', '[id*=btnFirstParty]', function () {
-            $("#firstParty").slideUp(1000);
-            $("#crimes").slideDown(1000);
+            var v7 = document.getElementById("<%=reqAns7.ClientID%>");
+            var v10 = document.getElementById("<%=reqAns10.ClientID%>");
+            var v11 = document.getElementById("<%=reqAns11.ClientID%>");
+            var v12 = document.getElementById("<%=reqAns12.ClientID%>");
+            ValidatorValidate(v7);
+            ValidatorValidate(v10);
+            ValidatorValidate(v11);
+            ValidatorValidate(v12);
+            if (v7.isvalid && v10.isvalid && v11.isvalid && v12.isvalid) {
+                $("#firstParty").slideUp(1000);
+                $("#crimes").slideDown(1000);
+                window.scrollTo({
+                    top: 10,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                alert("Fill in all the questions before moving ahead");
+            }
         });
 
         $(document).on('click', '[id*=btnCrime]', function () {
-            $("#crimes").slideUp(1000);
-            $("#otherCoverage").slideDown(1000);
+            var v13 = document.getElementById("<%=reqAns13.ClientID%>");
+            var v14 = document.getElementById("<%=reqAns14.ClientID%>");
+            var v15 = document.getElementById("<%=reqAns15.ClientID%>");
+            var v16 = document.getElementById("<%=reqAns16.ClientID%>");
+            var v17 = document.getElementById("<%=reqAns17.ClientID%>");
+            var v18 = document.getElementById("<%=reqAns18.ClientID%>");
+            ValidatorValidate(v13);
+            ValidatorValidate(v14);
+            ValidatorValidate(v15);
+            ValidatorValidate(v16);
+            ValidatorValidate(v17);
+            ValidatorValidate(v18);
+            if (v13.isvalid && v14.isvalid && v15.isvalid && v16.isvalid && v17.isvalid && v18.isvalid) {
+                $("#crimes").slideUp(1000);
+                $("#otherCoverage").slideDown(1000);
+                window.scrollTo({
+                    top: 10,
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                alert("Fill in all the questions before moving ahead");
+            }
         });
 
     </script>
@@ -234,7 +286,6 @@
             height: 0;
             overflow: hidden;
         }
-
     </style>
 </head>
 <body>
@@ -276,7 +327,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="bradcam_text text-center">
-                            <h3>Risk Assessment</h3>
+                            <h3 style="margin-top: 40px;">Risk Assessment</h3>
                         </div>
                     </div>
                 </div>
@@ -436,7 +487,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnThirdParty" runat="server" CssClass="boxed-btn3-line" Text="Next" Font-Size="20px" style="padding:0px;" ClientIDMode="Static" OnClientClick="return false;" />
+                                        <asp:Button ID="btnThirdParty" runat="server" CssClass="boxed-btn3-line" Text="Next" Font-Size="20px" Style="padding: 0px;" ClientIDMode="Static" OnClientClick="return false;" />
                                     </div>
                                 </div>
                             </div>
@@ -636,7 +687,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnFirstParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" Font-Size="20px" style="padding:0px;"/>
+                                        <asp:Button ID="btnFirstParty" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" Font-Size="20px" Style="padding: 0px;" />
                                     </div>
                                 </div>
                             </div>
@@ -765,7 +816,7 @@
                                 </div>
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnCrime" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" Font-Size="20px" style="padding:0px;"/>
+                                        <asp:Button ID="btnCrime" runat="server" CssClass="boxed-btn3-line" Text="Next" ClientIDMode="Static" OnClientClick="return false;" Font-Size="20px" Style="padding: 0px;" />
                                     </div>
                                 </div>
                             </div>
@@ -909,7 +960,7 @@
                                 <br />
                                 <div class="col-xl-12">
                                     <div class="input_field">
-                                        <asp:Button ID="btnSubmit" runat="server" CssClass="boxed-btn3-line" Text="SUBMIT" OnClick="btnSubmit_Click" Font-Size="20px" style="padding:0px;"/>
+                                        <asp:Button ID="btnSubmit" runat="server" CssClass="boxed-btn3-line" Text="SUBMIT" OnClick="btnSubmit_Click" Font-Size="20px" Style="padding: 0px;" />
                                     </div>
                                 </div>
                             </div>

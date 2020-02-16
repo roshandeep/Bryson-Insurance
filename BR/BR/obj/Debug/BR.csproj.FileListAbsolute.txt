@@ -77,3 +77,6 @@ C:\Users\rosha\source\repos\BR\BR\obj\Debug\BR.csproj.CoreCompileInputs.cache
 C:\Users\rosha\source\repos\BR\BR\obj\Debug\BR.csproj.CopyComplete
 C:\Users\rosha\source\repos\BR\BR\obj\Debug\BR.dll
 C:\Users\rosha\source\repos\BR\BR\obj\Debug\BR.pdb
+C:\Users\rosha\source\repos\BR\BR\bin\IronPdf.Assets.Rendering.Windows.dll
+C:\Users\rosha\source\repos\BR\BR\bin\IronPdf.dll
+C:\Users\rosha\source\repos\BR\BR\bin\IronPdf.xml

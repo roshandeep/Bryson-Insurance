@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Syncfusion.HtmlConverter;
 using Syncfusion.Pdf;
+using IronPdf;
 using System.IO;
 
 namespace BR
@@ -22,8 +23,8 @@ namespace BR
             {
                 DAL dal = new DAL();
 
-                userId = dal.GetRecentFeedbackUser();
-                //userId = 93;
+                //userId = dal.GetRecentFeedbackUser();
+                userId = 98;
 
                 DataTable dtUserInfo = dal.GetUserInfo(userId);
                 DataTable dtFeedbackReport = dal.GetFeedbackReport(userId);
@@ -33,36 +34,12 @@ namespace BR
           
         }
 
-        //private void SendPdfToUser()
-        //{
-        //    MailMessage mail = new MailMessage();
-        //    SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
-        //    mail.From = new MailAddress("roshandeep810@gmail.com");
-        //    mail.To.Add("roshandeep1995@gmail.com");
-        //    mail.Subject = "Bryon Insurance Feedback report PDF";
-        //    mail.Body = "The feedback Report from Bryson Insurance";
-
-        //    string filename = Session["filename"].ToString().Replace('/', '_');
-        //    string path = @"C:\Users\rosha\Downloads\";
-
-        //    Attachment attachment;
-        //    attachment = new Attachment(Path.Combine(path, filename), "application/pdf");
-        //    mail.Attachments.Add(attachment);
-
-        //    SmtpServer.Port = 587;
-        //    SmtpServer.Credentials = new System.Net.NetworkCredential("roshandeep810@gmail.com", "roshandeep2895");
-        //    SmtpServer.EnableSsl = true;
-
-        //    SmtpServer.Send(mail);
-
-        //}
+       
 
         public void createReport(DataTable dtUserInfo, DataTable dtFeedbackReport)
         {
-            //lblUserId.Text = dtUserInfo.Rows[0]["userId"].ToString().ToUpper();
-            //lblEmailId.Text = dtUserInfo.Rows[0]["email_id"].ToString();
-            //lblUsername.Text = dtUserInfo.Rows[0]["userName"].ToString().ToUpper();
-  
+            brysonLogo.ImageUrl = Page.ResolveUrl("~/img/logo-sm.png");
+
             double netAndSecInfo_sc = 0.0, intelProp_sc = 0.0, busiInter_sc = 0.0, compSecStand_sc = 0.0, wkPlsAsset_sc = 0.0, physicalDoc_sc = 0.0, insideThreat_sc = 0.0;
 
             netAndSecInfo_sc = Convert.ToDouble(dtFeedbackReport.Rows[0]["answer"].ToString()) + Convert.ToDouble(dtFeedbackReport.Rows[1]["answer"].ToString())
@@ -87,117 +64,117 @@ namespace BR
             //NETWORK AND INFORMATION SECURITY
             if (netAndSecInfo_sc > .75)
             {
-                img_networkAndInfoSec.ImageUrl = "~/report_images/High_Risk.PNG";
+                img_networkAndInfoSec.ImageUrl = Page.ResolveUrl("~/report_images/High_Risk.PNG");
                 //lblnetworkAndInfoSec.Text = netAndSecInfo_sc.ToString();
             }
             else if((netAndSecInfo_sc > .5) && (netAndSecInfo_sc <= .75))
             {
-                img_networkAndInfoSec.ImageUrl = "~/report_images/Average_Risk.PNG";
+                img_networkAndInfoSec.ImageUrl = Page.ResolveUrl("~/report_images/Average_Risk.PNG");
                 //lblnetworkAndInfoSec.Text = netAndSecInfo_sc.ToString();
             }
             else
             {
-                img_networkAndInfoSec.ImageUrl = "~/report_images/Low_Risk.PNG";
+                img_networkAndInfoSec.ImageUrl = Page.ResolveUrl("~/report_images/Low_Risk.PNG");
                 //lblnetworkAndInfoSec.Text = netAndSecInfo_sc.ToString();
             }
             //MULTIMEDIA AND INTERNET INTELLECTUAL PROPERTY
             if (intelProp_sc > .75)
             {
-                img_intelProp_sc.ImageUrl = "~/report_images/High_Risk.PNG";
+                img_intelProp_sc.ImageUrl = Page.ResolveUrl("~/report_images/High_Risk.PNG");
                 //lblintelProp_sc.Text = intelProp_sc.ToString();
             }
             else if ((intelProp_sc > .5) && (intelProp_sc <= .75))
             {
-                img_intelProp_sc.ImageUrl = "~/report_images/Average_Risk.PNG";
+                img_intelProp_sc.ImageUrl = Page.ResolveUrl("~/report_images/Average_Risk.PNG");
                 //lblintelProp_sc.Text = intelProp_sc.ToString();
             }
             else
             {
-                img_intelProp_sc.ImageUrl = "~/report_images/Low_Risk.PNG";
+                img_intelProp_sc.ImageUrl = Page.ResolveUrl("~/report_images/Low_Risk.PNG");
                 //lblintelProp_sc.Text = intelProp_sc.ToString();
             }
             //BUSINESS INTERRUPTION AND RECOVERY
             if (busiInter_sc > .75)
             {
-                img_busiInter_sc.ImageUrl = "~/report_images/High_Risk.PNG";
+                img_busiInter_sc.ImageUrl = Page.ResolveUrl("~/report_images/High_Risk.PNG");
                 //lblbusiInter_sc.Text = busiInter_sc.ToString();
             }
             else if ((busiInter_sc > .5) && (busiInter_sc <= .75))
             {
-                img_busiInter_sc.ImageUrl = "~/report_images/Average_Risk.PNG";
+                img_busiInter_sc.ImageUrl = Page.ResolveUrl("~/report_images/Average_Risk.PNG");
                 //lblbusiInter_sc.Text = busiInter_sc.ToString();
             }
             else
             {
-                img_busiInter_sc.ImageUrl = "~/report_images/Low_Risk.PNG";
+                img_busiInter_sc.ImageUrl = Page.ResolveUrl("~/report_images/Low_Risk.PNG");
                 //lblbusiInter_sc.Text = busiInter_sc.ToString();
             }
 
             //COMPLAINCE TO SECURITY STANDARDS
             if (compSecStand_sc > .75)
             {
-                img_compSecStand_sc.ImageUrl = "~/report_images/High_Risk.PNG";
+                img_compSecStand_sc.ImageUrl = Page.ResolveUrl("~/report_images/High_Risk.PNG");
                 //lblcompSecStand_sc.Text = compSecStand_sc.ToString();
             }
             else if ((compSecStand_sc > .5) && (compSecStand_sc <= .75))
             {
-                img_compSecStand_sc.ImageUrl = "~/report_images/Average_Risk.PNG";
+                img_compSecStand_sc.ImageUrl = Page.ResolveUrl("~/report_images/Average_Risk.PNG");
                 //lblcompSecStand_sc.Text = compSecStand_sc.ToString();
             }
             else
             {
-                img_compSecStand_sc.ImageUrl = "~/report_images/Low_Risk.PNG";
+                img_compSecStand_sc.ImageUrl = Page.ResolveUrl("~/report_images/Low_Risk.PNG");
                 //lblcompSecStand_sc.Text = compSecStand_sc.ToString();
             }
 
             //WORKPLACE ASSET SECURITY AND EMPLOYEE SECURITY AWARENESS
             if (wkPlsAsset_sc > .75)
             {
-                img_wkPlsAsset_sc.ImageUrl = "~/report_images/High_Risk.PNG";
+                img_wkPlsAsset_sc.ImageUrl = Page.ResolveUrl("~/report_images/High_Risk.PNG");
                 //lblwkPlsAsset_sc.Text = wkPlsAsset_sc.ToString();
             }
             else if ((wkPlsAsset_sc > .5) && (wkPlsAsset_sc <= .75))
             {
-                img_wkPlsAsset_sc.ImageUrl = "~/report_images/Average_Risk.PNG";
+                img_wkPlsAsset_sc.ImageUrl = Page.ResolveUrl("~/report_images/Average_Risk.PNG");
                 //lblwkPlsAsset_sc.Text = wkPlsAsset_sc.ToString();
             }
             else
             {
-                img_wkPlsAsset_sc.ImageUrl = "~/report_images/Low_Risk.PNG";
+                img_wkPlsAsset_sc.ImageUrl = Page.ResolveUrl("~/report_images/Low_Risk.PNG");
                 //lblwkPlsAsset_sc.Text = wkPlsAsset_sc.ToString();
             }
 
             //PHYSICAL DOCUMENT PROTECTION
             if (physicalDoc_sc > .75)
             {
-                img_physicalDoc_sc.ImageUrl = "~/report_images/High_Risk.PNG";
+                img_physicalDoc_sc.ImageUrl = Page.ResolveUrl("~/report_images/High_Risk.PNG");
                 //lblphysicalDoc_sc.Text = physicalDoc_sc.ToString();
             }
             else if ((physicalDoc_sc > .5) && (physicalDoc_sc <= .75))
             {
-                img_physicalDoc_sc.ImageUrl = "~/report_images/Average_Risk.PNG";
+                img_physicalDoc_sc.ImageUrl = Page.ResolveUrl("~/report_images/Average_Risk.PNG");
                 //lblphysicalDoc_sc.Text = physicalDoc_sc.ToString();
             }
             else
             {
-                img_physicalDoc_sc.ImageUrl = "~/report_images/Low_Risk.PNG";
+                img_physicalDoc_sc.ImageUrl = Page.ResolveUrl("~/report_images/Low_Risk.PNG");
                 //lblphysicalDoc_sc.Text = physicalDoc_sc.ToString();
             }
 
             //INSIDER THREAT/ROGUE EMPLOYEE PROTECTION
             if (insideThreat_sc > .75)
             {
-                img_insideThreat_sc.ImageUrl = "~/report_images/High_Risk.PNG";
+                img_insideThreat_sc.ImageUrl = Page.ResolveUrl("~/report_images/High_Risk.PNG");
                 //lblinsideThreat_sc.Text = insideThreat_sc.ToString();
             }
             else if ((insideThreat_sc > .5) && (insideThreat_sc <= .75))
             {
-                img_insideThreat_sc.ImageUrl = "~/report_images/Average_Risk.PNG";
+                img_insideThreat_sc.ImageUrl = Page.ResolveUrl("~/report_images/Average_Risk.PNG");
                 //lblinsideThreat_sc.Text = insideThreat_sc.ToString();
             }
             else
             {
-                img_insideThreat_sc.ImageUrl = "~/report_images/Low_Risk.PNG";
+                img_insideThreat_sc.ImageUrl = Page.ResolveUrl("~/report_images/Low_Risk.PNG");
                 //lblinsideThreat_sc.Text = insideThreat_sc.ToString();
             }
 
@@ -283,7 +260,7 @@ namespace BR
             else if (dtFeedbackReport.Rows[0]["ansText"].ToString() == "No")
             {
                 Label1_bullet.Text = "\u25C9";
-                Label1_bullet.Text = "We found you at low risk for this category. But remember that risk assessment is not a one-time activity, your IT environment and the threat landscape are constantly changing, so remember to perform it on a regular basis.";
+                Label1.Text = "We found you at low risk for this category. But remember that risk assessment is not a one-time activity, your IT environment and the threat landscape are constantly changing, so remember to perform it on a regular basis.";
                 Label2.Enabled = false;
                 Label2_bullet.Enabled = false;
                 Label3.Enabled = false;
@@ -416,27 +393,23 @@ namespace BR
                 Label11.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
             }
 
-            if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "Yes")
-            {
-                Label12_bullet.Text = "\u25C9";
-                Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-            else if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "No")
-            {
-                Label12_bullet.Text = "\u25C9";
-                Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-            else if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "Don't Know")
-            {
-                Label12_bullet.Text = "\u25C9";
-                Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
-            }
-
-            //if (dtFeedbackReport.Rows[10]["ansText"].ToString() == dtFeedbackReport.Rows[11]["ansText"].ToString())
+            //if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "Yes")
             //{
-            //    Label12_bullet.Enabled = false;
-            //    Label12.Enabled = false;
+            //    Label12_bullet.Text = "\u25C9";
+            //    Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
             //}
+            //else if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "No")
+            //{
+            //    Label12_bullet.Text = "\u25C9";
+            //    Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
+            //}
+            //else if (dtFeedbackReport.Rows[11]["ansText"].ToString() == "Don't Know")
+            //{
+            //    Label12_bullet.Text = "\u25C9";
+            //    Label12.Text = "Regulatory requirements are the absolute minimum that an organization should be following for the security of their IT assets, if you are not meeting these or lapses in following them, there is a high possibility that you might be an easy target for a cybercriminal";
+            //}
+
+
 
             if (dtFeedbackReport.Rows[12]["ansText"].ToString() == "Yes")
             {
@@ -623,27 +596,42 @@ namespace BR
                 Label24_bullet.Text = "\u25C9";
                 Label24.Text = "Your employees are the first line of defence to protect the IT assets which stores valuable company data. Security awareness training serves as an added layer of defence and ensures your employees are aware of the potential cyber threats and how to prevent them.";
             }
+            
         }
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            //Initialize HTML to PDF converter 
-            HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.WebKit);
-            WebKitConverterSettings settings = new WebKitConverterSettings();
-            //Set WebKit path
-            settings.WebKitPath = Server.MapPath("~/QtBinaries");
-            //Assign WebKit settings to HTML converter
-            htmlConverter.ConverterSettings = settings;
-            //Get the current URL
-            string url = HttpContext.Current.Request.Url.AbsoluteUri;
-            //Convert URL to PDF
-            PdfDocument document = htmlConverter.Convert(url);
-            //Save the document
-            string filename = "Risk_Report" + DateTime.Now.ToString();
-            Session["filename"] = filename;
-            document.Save(filename+".pdf", HttpContext.Current.Response, HttpReadType.Save);
+            ////Initialize HTML to PDF converter 
+            //HtmlToPdfConverter htmlConverter = new HtmlToPdfConverter(HtmlRenderingEngine.WebKit);
+            //WebKitConverterSettings settings = new WebKitConverterSettings();
+            ////Set WebKit path
+            //settings.WebKitPath = Server.MapPath("~/QtBinaries");
+            ////Assign WebKit settings to HTML converter
+            //htmlConverter.ConverterSettings = settings;
+            ////Get the current URL
+            //string url = HttpContext.Current.Request.Url.AbsoluteUri;
+            ////Convert URL to PDF
+            //Syncfusion.Pdf.PdfDocument document = htmlConverter.Convert(url);
+            ////Save the document
+            //string filename = "Risk_Report" + DateTime.Now.ToString();
+            //Session["filename"] = filename;
+            //document.Save(filename + ".pdf", HttpContext.Current.Response, HttpReadType.Save);
+
+            var AspxToPdfOptions = new PdfPrintOptions()
+            {
+                EnableJavaScript = true,
+                PrintHtmlBackgrounds = true,
+                CssMediaType = PdfPrintOptions.PdfCssMediaType.Print,
+                CreatePdfFormsFromHtml = true,
+                MarginTop = 40,  
+                MarginLeft = 20, 
+                MarginRight = 20, 
+                MarginBottom = 40
+            };
+            AspxToPdf.RenderThisPageAsPdf(AspxToPdf.FileBehavior.Attachment, "Risk_Report.pdf");
 
         }
-       
+
     }
 }

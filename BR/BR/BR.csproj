@@ -44,6 +44,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="IronPdf, Version=2020.0.1.24570, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.2020.1.0\lib\net40\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf.Assets.Rendering.Windows, Version=16.0.0.0, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iron.Assets.Rendering.Windows.16.0.0\lib\net40\IronPdf.Assets.Rendering.Windows.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Syncfusion.Compression.Base, Version=17.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <HintPath>..\packages\Syncfusion.HtmlToPdfConverter.QtWebKit.WinForms.17.4.0.39\lib\net46\Syncfusion.Compression.Base.dll</HintPath>
@@ -389,12 +395,15 @@
     <Content Include="report_images\Average_Risk.PNG" />
     <Content Include="report_images\backdrop.png" />
     <Content Include="report_images\crimes.jpg" />
+    <Content Include="report_images\don.jpg" />
     <Content Include="report_images\first_partyclaims.jpg" />
     <Content Include="report_images\High_Risk.PNG" />
+    <Content Include="report_images\kyle.jpg" />
     <Content Include="report_images\Low_Risk.PNG" />
     <Content Include="report_images\others_claims.png" />
     <Content Include="report_images\testimonial_bg.jpg" />
     <Content Include="report_images\Third party risk management.jpg" />
+    <Content Include="report_images\tracy.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

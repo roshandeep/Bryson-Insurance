@@ -22,6 +22,15 @@ namespace BR {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// brysonLogo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image brysonLogo;
+        
+        /// <summary>
         /// img_networkAndInfoSec control.
         /// </summary>
         /// <remarks>
@@ -29,15 +38,6 @@ namespace BR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img_networkAndInfoSec;
-        
-        /// <summary>
-        /// lblnetworkAndInfoSec control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblnetworkAndInfoSec;
         
         /// <summary>
         /// Label1_bullet control.
@@ -139,15 +139,6 @@ namespace BR {
         protected global::System.Web.UI.WebControls.Image img_intelProp_sc;
         
         /// <summary>
-        /// lblintelProp_sc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblintelProp_sc;
-        
-        /// <summary>
         /// Label6_bullet control.
         /// </summary>
         /// <remarks>
@@ -173,15 +164,6 @@ namespace BR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img_busiInter_sc;
-        
-        /// <summary>
-        /// lblbusiInter_sc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblbusiInter_sc;
         
         /// <summary>
         /// Label7_bullet control.
@@ -265,15 +247,6 @@ namespace BR {
         protected global::System.Web.UI.WebControls.Image img_compSecStand_sc;
         
         /// <summary>
-        /// lblcompSecStand_sc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblcompSecStand_sc;
-        
-        /// <summary>
         /// Label11_bullet control.
         /// </summary>
         /// <remarks>
@@ -317,15 +290,6 @@ namespace BR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img_wkPlsAsset_sc;
-        
-        /// <summary>
-        /// lblwkPlsAsset_sc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblwkPlsAsset_sc;
         
         /// <summary>
         /// Label13_bullet control.
@@ -445,15 +409,6 @@ namespace BR {
         protected global::System.Web.UI.WebControls.Image img_physicalDoc_sc;
         
         /// <summary>
-        /// lblphysicalDoc_sc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblphysicalDoc_sc;
-        
-        /// <summary>
         /// Label19_bullet control.
         /// </summary>
         /// <remarks>
@@ -515,15 +470,6 @@ namespace BR {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image img_insideThreat_sc;
-        
-        /// <summary>
-        /// lblinsideThreat_sc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblinsideThreat_sc;
         
         /// <summary>
         /// Label22_bullet control.
