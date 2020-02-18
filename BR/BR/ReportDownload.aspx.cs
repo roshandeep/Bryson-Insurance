@@ -23,8 +23,8 @@ namespace BR
             {
                 DAL dal = new DAL();
 
-                //userId = dal.GetRecentFeedbackUser();
-                userId = 98;
+                userId = dal.GetRecentFeedbackUser();
+                //userId = 98;
 
                 DataTable dtUserInfo = dal.GetUserInfo(userId);
                 DataTable dtFeedbackReport = dal.GetFeedbackReport(userId);
@@ -617,6 +617,10 @@ namespace BR
             //string filename = "Risk_Report" + DateTime.Now.ToString();
             //Session["filename"] = filename;
             //document.Save(filename + ".pdf", HttpContext.Current.Response, HttpReadType.Save);
+
+            License.LicenseKey = "IRONPDF-1180015980-253754-ACD223-896DE158E3-44CB4C67-UEx49E1C59A8CBC7D8-COMMUNITY.TRIAL.EXPIRES.19.MAR.2020";
+            bool result = License.IsValidLicense("IRONPDF-1180015980-253754-ACD223-896DE158E3-44CB4C67-UEx49E1C59A8CBC7D8-COMMUNITY.TRIAL.EXPIRES.19.MAR.2020");
+            bool is_licensed = License.IsLicensed;
 
             var AspxToPdfOptions = new PdfPrintOptions()
             {

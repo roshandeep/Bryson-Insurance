@@ -350,9 +350,9 @@
                     <div class="col-xl-8">
                         <div class="slider_text text-center justify-content-center">
                             <p>
-                                As per the 2019 Scalar Security Study, it has been found that 100 % of Canadian businesses surveyed have experienced a cyber security attack in the past 12 months.<br />
-$9500 is the average hourly loss to SMEs experiencing cyber related downtime.<br />
-Bryson Insurance has the cyber insurance solution for you and your business. To understand your business and recommend the appropriate cyber insurance, we would like to perform a short risk assessment.<br />
+                                As per the 2019 Scalar Security Study, it has been found that 100 % of Canadian businesses surveyed have experienced a cyber security attack in the past 12 months.<br><br>
+$9500 is the average hourly loss to SMEs experiencing cyber related downtime.<br><br>
+Bryson Insurance has the cyber insurance solution for you and your business. To understand your business and recommend the appropriate cyber insurance, we would like to perform a short risk assessment.<br><br>
                                 To begin click on the below button.
 
                             </p>
@@ -505,17 +505,12 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
     <div class="contact_action_area">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-xl-7 col-md-6">
+                <div class="col-xl-12 col-md-12">
                     <div class="action_heading">
                         <h3>100% secure and safe</h3>
                         <p>
                             Recover rapidly with Cyber Assist – at no additional cost!
                         </p>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-md-6">
-                    <div class="call_add_action">
-                        
                     </div>
                 </div>
             </div>
@@ -527,15 +522,14 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
         <div class="container">
             <div class="features_main_wrap">
                 <div class="row  align-items-center">
-                    <div class="col-xl-5 col-lg-5 col-md-6">
+            <%--        <div class="col-xl-5 col-lg-5 col-md-6">
                         <div class="about_image">
                             <img src="img/about/aboutus_img.png" alt="" />
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <div class="features_info">
+                    </div>--%>
+                    <div class="col-xl-12 col-lg-12 col-md-12">
+                        <div class="features_info" style="padding-left: 0px;">
                             <h3>Why Choose Us?</h3>
-           
                         </div>
                     </div>
                 </div>
@@ -596,7 +590,7 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
                                 </p>
                                 <div class="testmonial_author">
                                     <div class="thumb">
-                                        <img src="img/case/testmonial.png" alt="">
+                                        <img src="report_images/tracy.jpg" alt="" style="width:50px;height:50px;border-radius:50%">
                                     </div>
                                     <h3>Tracy L. Makris</h3>
                                     <span>President at Bryson Insurance</span>
@@ -612,7 +606,7 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
                                     that are especially dangerous for children, predatory research and information gathering tactics</p>
                                 <div class="testmonial_author">
                                     <div class="thumb">
-                                        <img src="img/case/testmonial.png" alt="">
+                                        <img src="report_images/kyle.jpg" alt="" style="width:50px;height:50px;border-radius:50%">
                                     </div>
                                     <h3>Kyle Paterson</h3>
                                     <span>Director of Culture and Business Development</span>
@@ -624,14 +618,14 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
                                 <div class="quote">
                                     <img src="img/svg_icon/quote.svg" alt="">
                                 </div>
-                                <p>Donec imperdiet congue orci consequat mattis. Donec rutrum porttitor sollicitudin.
-                                    Pellentesque id dolor tempor sapien feugiat ultrices.</p>
+                                <p>Bryson Insurance has collaborated with Durham College’s AI/Hub to create a cybersecurity risk assessment tool that is specific to the SMB sector that helps to solve an important question… what cyber risks should our company be most concerned about?
+Technical and non-technical staff alike can use this tool to understand their risks and identify proactive insurance measures to protect themselves.</p>
                                 <div class="testmonial_author">
                                     <div class="thumb">
-                                        <img src="img/case/testmonial.png" alt="">
+                                        <img src="report_images/don.jpg" alt="" style="width:50px;height:50px;border-radius:50%">
                                     </div>
-                                    <h3>Robert Thomson</h3>
-                                    <span>Business Owner</span>
+                                    <h3>Don Lovisa</h3>
+                                    <span>President - Durham College</span>
                                 </div>
                             </div>
                         </div>
@@ -643,7 +637,7 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
     <!-- /testimonial_area  -->
 
     <!-- Estimate_area start  -->
-    <section class="Estimate_area overlay" id="contactArea">
+    <section class="Estimate_area overlay" id="contactArea" style="background-image:url('../report_images/backdrop.png')";>
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-5">
@@ -654,7 +648,7 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
                             <br />
                             After providing the details, click <b style="color: #ff3414; font-size:20px;">Next</b>
                         </p>
-                        <!--   <a href="#" class="boxed-btn3">+10 672 457 356</a> -->
+                        
                     </div>
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-7">
@@ -783,26 +777,15 @@ Bryson Insurance has the cyber insurance solution for you and your business. To 
                             </ul>
                         </div>
                     </div>
-                    <%--<div class="col-xl-4 col-md-6 col-lg-4">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">Subscribe
-                            </h3>
-                            <form action="#" class="newsletter_form">
-                                <input type="text" placeholder="Enter your mail">
-                                <button type="submit">Subscribe</button>
-                            </form>
-                            <p class="newsletter_text">
-                                Esteem spirit temper too say adieus who direct esteem esteems
-                                luckily.
-                            </p>
-                        </div>
-                    </div>--%>
+          
                 </div>
             </div>
         </div>
         <div class="copy-right_text">
             <div class="container">
-                <div class="footer_border"></div>
+                <div class="footer_border">
+                    <p>Copyright © 2020 <br>Bryson &amp; Associates Insurance Brokers Ltd.<br>All Rights Reserved. <br>Powered By AI HUB</p>
+                </div>
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">

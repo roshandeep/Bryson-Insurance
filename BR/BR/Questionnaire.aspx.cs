@@ -456,7 +456,7 @@ namespace BR
                     ansText20 = "No";
                     ans20 = dt.Rows[19]["question_wt_no"].ToString();
                 }
-                else if (ddlAns21.SelectedItem.Text == "Don't Know")
+                else if (ddlAns20.SelectedItem.Text == "Don't Know")
                 {
                     ansText20 = "Don't Know";
                     ans20 = dt.Rows[19]["question_dontKnow"].ToString();
